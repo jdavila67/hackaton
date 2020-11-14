@@ -32,4 +32,11 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         Route::get('/', [\App\Http\Controllers\OrganizationController::class, 'index'])->name('organization');
         Route::get('/anadir', [\App\Http\Controllers\OrganizationController::class, 'create'])->name('organization.create');
     });
+
+    /* Users */
+    Route::prefix('usuarios')->group(function () {
+        Route::get('/', [\App\Http\Controllers\UserController::class, 'index'])->name('user');
+        Route::get('/anadir', [\App\Http\Controllers\UserController::class, 'create'])->name('user.create');
+        Route::get('/actualizar/{id}', [\App\Http\Controllers\UserController::class, 'edit'])->name('user.edit');
+    });
 });

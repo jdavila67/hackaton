@@ -1,18 +1,18 @@
 <x-app-layout>
-    @section('header', 'Crear Organización')
+    @section('header', 'Actualizar Organización')
     <div class="ui container a-p-12">
         <form class="ui form">
             <h3 class="ui dividing header">Información Basica</h3>
             {{--Basic Info--}}
-           <div class="one fields">
-               <div class="field">
-                   <label for="logo_input">
-                       Logo
-                       <img width="150px" id="logo" src="https://via.placeholder.com/150"/>
-                       <input id="logo_input" type="file" style="display: none">
-                   </label>
-               </div>
-           </div>
+            <div class="one fields">
+                <div class="field">
+                    <label for="logo_input">
+                        Logo
+                        <img width="150px" id="logo" src="https://via.placeholder.com/150"/>
+                        <input id="logo_input" type="file" style="display: none">
+                    </label>
+                </div>
+            </div>
             <div class="field full">
                 <label>Nombre</label>
                 <input type="text" placeholder="Nombre" name="name" required>

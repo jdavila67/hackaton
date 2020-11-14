@@ -36,7 +36,7 @@
                 <div class="py-6">
                     <div class="mx-auto sm:px-6 lg:px-8">
                         @yield('action')
-                        <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
+                        <div class="bg-white shadow-xl sm:rounded-lg">
                             {{ $slot }}
                         </div>
                     </div>

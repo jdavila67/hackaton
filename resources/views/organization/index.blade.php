@@ -9,8 +9,7 @@
             </div>
         </div>
     @endsection
-
-    <table class="ui celled table">
+    <table class="ui striped table">
         <thead>
         <tr>
             <th>Nombre</th>
@@ -34,19 +33,21 @@
             <td data-label="Age">24</td>
             <td data-label="Job">Engineer</td>
             <td data-label="Job">Engineer</td>
-            <td style="overflow:visible;">
-            <select name="gender" class="ui dropdown a-w-100" id="select">
-                    <option value="">Acción</option>
-                    <option value="Editar">Editar</option>
-                    <option value="Desactivart">Desactivar</option>
-                </select>
+            <td>
+                <div class="ui dropdown">
+                    <div class="text">Acción</div>
+                    <i class="dropdown icon"></i>
+                    <div class="menu">
+                        <div class="item">Modificar</div>
+                    </div>
+                </div>
             </td>
         </tr>
         </tbody>
     </table>
     @section('scripts')
         <script>
-            //$('.ui .dropdown').dropdown();
+            $('.ui .dropdown').dropdown();
         </script>
     @endsection
 </x-app-layout>
