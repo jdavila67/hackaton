@@ -12,11 +12,11 @@
     </div>
     <div class="header-menu">
         <ul>
-            <li><a class="active" href="">Inicio</a></li>
-            <li><a href="">Sobre Nosotros</a></li>
-            <li><a href="">Organizaciones</a></li>
-            <li><a href="">Eventos</a></li>
-            <li><a href="">Donaciones</a></li>
+            <li><a class="active" href="/">Inicio</a></li>
+            <li><a href="{{route('home.about')}}">Sobre Nosotros</a></li>
+            <li><a href="{{route('home.organization')}}">Organizaciones</a></li>
+            <li><a href="{{route('home.event')}}">Eventos</a></li>
+            <li><a href="{{route('home.donation')}}">Donaciones</a></li>
         </ul>
     </div>
 </div>

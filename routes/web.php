@@ -15,22 +15,22 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
 
 Route::get('/eventos', function () {
-    return view('welcome');
+    return view('event');
 })->name('home.event');
 
 Route::get('/organizaciones', function () {
-    return view('welcome');
+    return view('organization');
 })->name('home.organization');
 
 Route::get('/donaciones', function () {
-    return view('welcome');
+    return view('donation');
 })->name('home.donation');
 
 Route::get('/sobre-nosotros', function () {
-    return view('welcome');
+    return view('about');
 })->name('home.about');
 
 
