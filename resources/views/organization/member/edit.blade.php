@@ -1,5 +1,5 @@
 <x-app-layout>
-    @section('header', 'Actualizar Organización')
+    @section('header', 'Actualizar Miembro')
     <div class="ui container a-p-12">
         <form class="ui form">
             <h3 class="ui dividing header">Información Basica</h3>
@@ -7,7 +7,7 @@
             <div class="one fields">
                 <div class="field">
                     <label for="logo_input">
-                        Logo
+                        Imagen
                         <img width="150px" id="logo" src="https://via.placeholder.com/150"/>
                         <input id="logo_input" type="file" style="display: none">
                     </label>
@@ -15,42 +15,18 @@
             </div>
             <div class="field full">
                 <label>Nombre</label>
-                <input type="text" placeholder="Nombre" name="name" required value="{{old('name', $organization->name)}}">
+                <input type="text" placeholder="Nombre" name="name" required value="{{old('name', $member->name)}}">
             </div>
-            <div class="three fields">
-                <div class="field">
-                    <label>Correo Electrónico</label>
-                    <input type="email" name="email" placeholder="Correo Electrónico" required value="{{old('email', $organization->email)}}">
-                </div>
-                <div class="field">
-                    <label>Teléfono</label>
-                    <input type="text" name="phone_1" placeholder="Teléfono" required value="{{old('phone_1', $organization->phone_number_one)}}">
-                </div>
-                <div class="field">
-                    <label>Teléfono 2</label>
-                    <input type="text" name="phone_2" placeholder="Teléfono"  value="{{old('phone_2', $organization->phone_number_two)}}">
-                </div>
-            </div>
-            <div class="two fields">
-                <div class="field">
-                    <label>Mision</label>
-                    <textarea name="mission">{{old('mission', $organization->mission)}}</textarea>
-                </div>
-                <div class="field">
-                    <label>Vision</label>
-                    <textarea name="vision">{{old('vision', $organization->vision)}}</textarea>
-                </div>
-            </div>
-            <div class="field">
-                <label>Descripción</label>
-                <textarea name="description">{{old('description', $organization->description)}}</textarea>
+            <div class="field full">
+                <label>Rol</label>
+                <input type="text" placeholder="Rol" name="role" required value="{{old('role', $member->role)}}">
             </div>
             {{--Basic Info--}}
             {{-- Action --}}
             <button class="ui primary button" type="submit">
                 Guardar
             </button>
-            <a class="ui button" href="{{route('organization')}}">
+            <a class="ui button" href="{{route('member.index', ['id' => $member->org_id])}}">
                 Regresar
             </a>
             {{-- Action --}}

@@ -2,18 +2,19 @@
 
 namespace Database\Factories;
 
-use App\Models\OrganizationMember;
+use App\Models\Organization;
+use App\Models\User;
+use App\Models\UserOrganization;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-
-class OrganizationMemberFactory extends Factory
+class UserOrganizationFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = OrganizationMember::class;
+    protected $model = UserOrganization::class;
 
     /**
      * Define the model's default state.
@@ -23,10 +24,9 @@ class OrganizationMemberFactory extends Factory
     public function definition()
     {
         return [
-            'name'=>$this->faker->name,
-            'role'=>$this->faker->sentence(1,true),
-            'picture'=>'https://via.placeholder.com/150'
+            //
+            'user_id' => User::all()->random()->id,
+            'org_id' => Organization::all()->random()->id
         ];
-
     }
 }

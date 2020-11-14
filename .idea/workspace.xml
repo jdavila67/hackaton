@@ -2,13 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f98a822f-ded9-45a1-9189-470d5e0f9f03" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/UserOrganizationController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/UserOrganization.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/factories/UserOrganizationFactory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_11_14_050423_create_user_organizations_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeders/UserOrganizationSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/organization/member/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/organization/member/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/jetstream.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/jetstream.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/forgot-password.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/forgot-password.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/reset-password.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/reset-password.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/OrganizationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/OrganizationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/OrganizationMemberController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/OrganizationMemberController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Organization.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Organization.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/OrganizationFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/OrganizationFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/OrganizationMemberFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/OrganizationMemberFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/organization/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/organization/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/organization/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/organization/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -192,7 +202,7 @@
       <updated>1605307775578</updated>
       <workItem from="1605307776615" duration="275000" />
       <workItem from="1605308408405" duration="5081000" />
-      <workItem from="1605315105048" duration="10126000" />
+      <workItem from="1605315105048" duration="15318000" />
     </task>
     <servers />
   </component>
@@ -203,9 +213,10 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1605309462625">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="-1230" y="286" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1605331771665">
+      <screen x="-1920" y="0" width="1920" height="1080" />
     </state>
+    <state x="-1230" y="286" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/-1920.0.1920.1080/-3600.0.1680.1050/0.0.1920.1080@-1920.0.1920.1080" timestamp="1605331771665" />
     <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605309462625" />
     <state x="-1353" y="115" key="CommitChangelistDialog2" timestamp="1605317906078">
       <screen x="-1920" y="0" width="1920" height="1080" />
@@ -227,10 +238,10 @@
       <screen x="-1920" y="0" width="1920" height="1080" />
     </state>
     <state width="1878" height="305" key="GridCell.Tab.0.right/-1920.0.1920.1080/-3600.23.1680.1027/0.23.1920.1057@-1920.0.1920.1080" timestamp="1605315094037" />
-    <state x="-1137" y="470" key="NewPhpFileDialog" timestamp="1605321546160">
+    <state x="-1137" y="470" key="NewPhpFileDialog" timestamp="1605328986878">
       <screen x="-1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="-1137" y="470" key="NewPhpFileDialog/-1920.0.1920.1080/-3600.0.1680.1050/0.0.1920.1080@-1920.0.1920.1080" timestamp="1605321546160" />
+    <state x="-1137" y="470" key="NewPhpFileDialog/-1920.0.1920.1080/-3600.0.1680.1050/0.0.1920.1080@-1920.0.1920.1080" timestamp="1605328986878" />
     <state x="-1452" y="179" key="SettingsEditor" timestamp="1605315073406">
       <screen x="-1920" y="0" width="1920" height="1080" />
     </state>
@@ -239,9 +250,9 @@
       <screen x="-1920" y="0" width="1920" height="1080" />
     </state>
     <state width="600" height="428" key="javadoc.popup/-1920.0.1920.1080/-3600.0.1680.1050/0.0.1920.1080@-1920.0.1920.1080" timestamp="1605324999180" />
-    <state x="-1295" y="241" width="670" height="676" key="search.everywhere.popup" timestamp="1605326526028">
+    <state x="-1295" y="241" width="670" height="676" key="search.everywhere.popup" timestamp="1605328743517">
       <screen x="-1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="-1295" y="241" width="670" height="676" key="search.everywhere.popup/-1920.0.1920.1080/-3600.0.1680.1050/0.0.1920.1080@-1920.0.1920.1080" timestamp="1605326526028" />
+    <state x="-1295" y="241" width="670" height="676" key="search.everywhere.popup/-1920.0.1920.1080/-3600.0.1680.1050/0.0.1920.1080@-1920.0.1920.1080" timestamp="1605328743517" />
   </component>
 </project>

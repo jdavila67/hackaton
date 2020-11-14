@@ -34,4 +34,7 @@ class Organization extends Model
     {
         return $this->hasMany(\App\Models\OrganizationTag::class,'org_id','id');
     }
+    public function users() {
+        return $this->belongsToMany(\App\Models\UserOrganization::class, 'org_id', 'id');
+    }
 }

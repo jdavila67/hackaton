@@ -65,4 +65,8 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Role::class,'user_roles');
     }
+
+    public function organizations() {
+        return $this->belongsTo(\App\Models\UserOrganization::class, 'user_id', 'id');
+    }
 }
