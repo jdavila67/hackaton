@@ -11,9 +11,10 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
 
         <!-- Styles -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
         <link rel="stylesheet" href="{{ asset('css/semantic.min.css') }}">
-
+        <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
         @livewireStyles
 
         <!-- Scripts -->
@@ -25,13 +26,16 @@
             <!-- Page Heading -->
             <header class="bg-white shadow">
                 <div class="mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                    {{ $header }}
+                    <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+                        @yield('header')
+                    </h2>
                 </div>
             </header>
             <!-- Page Content -->
             <main>
                 <div class="py-6">
                     <div class="mx-auto sm:px-6 lg:px-8">
+                        @yield('action')
                         <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                             {{ $slot }}
                         </div>
