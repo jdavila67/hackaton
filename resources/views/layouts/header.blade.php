@@ -1,7 +1,7 @@
 <div class="header">
     <div class="header-top">
         <div class="logo-header">
-            <img src="https://via.placeholder.com/150" alt="logo"/>
+            <img src="{{url('/images/logo.png')}}" alt="logo"/>
         </div>
         <div class="social">
             <ul>
