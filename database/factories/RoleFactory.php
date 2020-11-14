@@ -22,7 +22,7 @@ class RoleFactory extends Factory
     public function definition()
     {
         return [
-                'role'=>$this->faker->catchPhrase
+            'role'=>$this->faker->catchPhrase
         ];
     }
 }
