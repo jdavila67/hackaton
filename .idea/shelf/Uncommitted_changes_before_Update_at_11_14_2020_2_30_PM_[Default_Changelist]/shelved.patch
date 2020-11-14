@@ -1,0 +1,334 @@
+Index: database/seeders/DatabaseSeeder.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php\r\n\r\nnamespace Database\\Seeders;\r\n\r\nuse App\\Models\\Organization;\r\nuse App\\Models\\Role;\r\nuse App\\Models\\User;\r\nuse App\\Models\\UserOrganization;\r\nuse Illuminate\\Database\\Seeder;\r\n\r\nclass DatabaseSeeder extends Seeder\r\n{\r\n    /**\r\n     * Seed the application's database.\r\n     *\r\n     * @return void\r\n     */\r\n    public function run()\r\n    {\r\n        Role::factory()->times(3)->create();\r\n        Organization::factory()->count(10)->hasFiles(2)->hasOrganizationMembers(5)->hasOrganizationTags(5)->hasContacts(2)->hasEvents(5)->hasAddresses(1)->create();\r\n        //User::factory()->count(10)->create();\r\n        User::factory()->count(10)->create();\r\n        UserOrganization::factory()->count(15)->create();\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- database/seeders/DatabaseSeeder.php	(revision 6233763c40d23f5634cecae566fdda33518abc1d)
++++ database/seeders/DatabaseSeeder.php	(date 1605378493133)
+@@ -3,6 +3,8 @@
+ namespace Database\Seeders;
+ 
+ use App\Models\Organization;
++use App\Models\Post;
++use App\Models\PostComments;
+ use App\Models\Role;
+ use App\Models\User;
+ use App\Models\UserOrganization;
+@@ -18,9 +20,10 @@
+     public function run()
+     {
+         Role::factory()->times(3)->create();
+-        Organization::factory()->count(10)->hasFiles(2)->hasOrganizationMembers(5)->hasOrganizationTags(5)->hasContacts(2)->hasEvents(5)->hasAddresses(1)->create();
++        Organization::factory()->count(10)->hasPosts(2)->hasFiles(2)->hasOrganizationMembers(5)->hasOrganizationTags(5)->hasContacts(2)->hasEvents(5)->hasAddresses(1)->create();
+         //User::factory()->count(10)->create();
+         User::factory()->count(10)->create();
+         UserOrganization::factory()->count(15)->create();
++        PostComments::factory()->count(15)->create();
+     }
+ }
+Index: database/seeders/PostCommentsSeeder.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- database/seeders/PostCommentsSeeder.php	(date 1605377097984)
++++ database/seeders/PostCommentsSeeder.php	(date 1605377097984)
+@@ -0,0 +1,19 @@
++<?php
++
++namespace Database\Seeders;
++
++use App\Models\PostComments;
++use Illuminate\Database\Seeder;
++
++class PostCommentsSeeder extends Seeder
++{
++    /**
++     * Run the database seeds.
++     *
++     * @return void
++     */
++    public function run()
++    {
++        PostComments::factory()->count(2)->create();
++    }
++}
+Index: app/Models/Organization.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php\r\n\r\nnamespace App\\Models;\r\n\r\nuse Illuminate\\Database\\Eloquent\\Factories\\HasFactory;\r\nuse Illuminate\\Database\\Eloquent\\Model;\r\n\r\nclass Organization extends Model\r\n{\r\n    use HasFactory;\r\n    protected $fillable = ['name','description','mission','vision','email','phone_number_one','phone_number_two','org_logo'];\r\n\r\n    public function addresses()\r\n    {\r\n        return $this->hasMany(\\App\\Models\\Address::class,'org_id','id');\r\n    }\r\n    public function events()\r\n    {\r\n        return $this->hasMany(\\App\\Models\\Event::class,'org_id','id');\r\n    }\r\n    public function contacts()\r\n    {\r\n        return $this->hasMany(\\App\\Models\\Contact::class,'org_id','id');\r\n    }\r\n    public function files()\r\n    {\r\n        return $this->hasMany(\\App\\Models\\File::class,'org_id','id');\r\n    }\r\n    public function organizationMembers()\r\n    {\r\n        return $this->hasMany(\\App\\Models\\OrganizationMember::class,'org_id','id');\r\n    }\r\n    public function organizationTags()\r\n    {\r\n        return $this->hasMany(\\App\\Models\\OrganizationTag::class,'org_id','id');\r\n    }\r\n    public function users() {\r\n        return $this->belongsToMany(\\App\\Models\\UserOrganization::class, 'org_id', 'id');\r\n    }\r\n    public function volunteers()\r\n    {\r\n        return $this->hasMany(\\App\\Models\\Volunteer::class,'org_id','id');\r\n    }\r\n    public function posts()\r\n    {\r\n        return $this->hasMany(\\App\\Models\\Post::class,'org_id','id');\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/Models/Organization.php	(revision 6233763c40d23f5634cecae566fdda33518abc1d)
++++ app/Models/Organization.php	(date 1605376105196)
+@@ -45,4 +45,5 @@
+     {
+         return $this->hasMany(\App\Models\Post::class,'org_id','id');
+     }
++
+ }
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"f98a822f-ded9-45a1-9189-470d5e0f9f03\" name=\"Default Changelist\" comment=\"\">\r\n      <change afterPath=\"$PROJECT_DIR$/resources/views/layouts/footer.blade.php\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/public/css/styles.css\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/public/css/styles.css\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/resources/css/styles.css\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/resources/css/styles.css\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/resources/views/layouts/default.blade.php\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/resources/views/layouts/default.blade.php\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/resources/views/layouts/header.blade.php\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/resources/views/layouts/header.blade.php\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/routes/web.php\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/routes/web.php\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"ComposerSettings\" doNotAsk=\"true\" synchronizationState=\"SYNCHRONIZE\">\r\n    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>\r\n    <execution />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"composer.json\" />\r\n        <option value=\"CSS File\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"PhpWorkspaceProjectConfiguration\">\r\n    <include_path>\r\n      <path value=\"$PROJECT_DIR$/vendor/theseer/tokenizer\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/filp/whoops\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/jenssegers/agent\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/psy/psysh\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/nesbot/carbon\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/nunomaduro/collision\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/phpunit/phpunit\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/mockery/mockery\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/nikic/php-parser\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/phpdocumentor/type-resolver\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/phpdocumentor/reflection-docblock\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/league/commonmark\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/phpdocumentor/reflection-common\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/var-dumper\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/lexer\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/instantiator\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/inflector\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/psr/container\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/psr/event-dispatcher\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/asm89/stack-cors\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/psr/simple-cache\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/psr/log\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/psr/http-client\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/psr/http-message\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/phpunit/php-timer\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/phpunit/php-invoker\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/phpunit/php-file-iterator\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/pragmarx/google2fa\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/bacon/bacon-qr-code\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/phpunit/php-text-template\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/phpunit/php-code-coverage\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/myclabs/deep-copy\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/dasprid/enum\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/opis/closure\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/fideloper/proxy\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/swiftmailer/swiftmailer\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/fruitcake/laravel-cors\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/dnoegel/php-xdg-base-dir\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/voku/portable-ascii\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/livewire/livewire\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/egulias/email-validator\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/jaybizzle/crawler-detect\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/ramsey/collection\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/phar-io/version\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/ramsey/uuid\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/phar-io/manifest\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/paragonie/constant_time_encoding\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/league/mime-type-detection\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/league/flysystem\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/fakerphp/faker\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/brick/math\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/graham-campbell/result-type\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/phpoption/phpoption\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/webmozart/assert\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/ralouphie/getallheaders\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/guzzlehttp/promises\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/guzzlehttp/psr7\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/guzzlehttp/guzzle\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/sebastian/comparator\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/laravel/framework\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/sebastian/object-enumerator\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/laravel/sanctum\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/sebastian/exporter\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/laravel/jetstream\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/polyfill-php80\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/hamcrest/hamcrest-php\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/sebastian/object-reflector\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/laravel/fortify\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/process\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/sebastian/code-unit\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/laravel/tinker\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/error-handler\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/sebastian/environment\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/mime\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/sebastian/recursion-context\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/http-client-contracts\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/sebastian/cli-parser\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/deprecation-contracts\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/sebastian/version\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/translation\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/css-selector\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/sebastian/type\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/service-contracts\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/sebastian/resource-operations\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/polyfill-ctype\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/sebastian/diff\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/facade/ignition\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/console\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/sebastian/lines-of-code\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/facade/ignition-contracts\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/routing\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/sebastian/global-state\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/facade/flare-client-php\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/finder\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/phpspec/prophecy\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/string\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/monolog/monolog\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/event-dispatcher-contracts\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/polyfill-mbstring\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/polyfill-intl-idn\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/event-dispatcher\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/http-kernel\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/polyfill-php73\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/polyfill-php72\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/translation-contracts\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/polyfill-iconv\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/polyfill-intl-grapheme\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/polyfill-intl-normalizer\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/http-foundation\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/mobiledetect/mobiledetectlib\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/tijsverkoyen/css-to-inline-styles\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/composer\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/dragonmantank/cron-expression\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/vlucas/phpdotenv\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/sebastian/complexity\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/sebastian/code-unit-reverse-lookup\" />\r\n    </include_path>\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"1kFsfIAbcLrcQG21fd4tKRJgmx5\" />\r\n  <component name=\"ProjectLevelVcsManager\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"ASKED_ADD_EXTERNAL_FILES\" value=\"true\" />\r\n    <property name=\"ASKED_SHARE_PROJECT_CONFIGURATION_FILES\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"SHARE_PROJECT_CONFIGURATION_FILES\" value=\"true\" />\r\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\r\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$\" />\r\n    <property name=\"list.type.of.created.stylesheet\" value=\"CSS\" />\r\n    <property name=\"node.js.detected.package.eslint\" value=\"true\" />\r\n    <property name=\"node.js.path.for.package.eslint\" value=\"project\" />\r\n    <property name=\"node.js.path.for.package.tslint\" value=\"project\" />\r\n    <property name=\"node.js.selected.package.eslint\" value=\"(autodetect)\" />\r\n    <property name=\"node.js.selected.package.tslint\" value=\"(autodetect)\" />\r\n    <property name=\"nodejs_package_manager_path\" value=\"npm\" />\r\n    <property name=\"settings.editor.selected.configurable\" value=\"preferences.lookFeel\" />\r\n    <property name=\"vue.rearranger.settings.migration\" value=\"true\" />\r\n  </component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"phpunit.xml\" type=\"PHPUnitRunConfigurationType\" factoryName=\"PHPUnit\">\r\n      <TestRunner scope=\"XML\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"f98a822f-ded9-45a1-9189-470d5e0f9f03\" name=\"Default Changelist\" comment=\"\" />\r\n      <created>1605307775578</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1605307775578</updated>\r\n      <workItem from=\"1605307776615\" duration=\"275000\" />\r\n      <workItem from=\"1605308408405\" duration=\"5081000\" />\r\n      <workItem from=\"1605315105048\" duration=\"15741000\" />\r\n      <workItem from=\"1605356232662\" duration=\"9888000\" />\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <option name=\"ADD_EXTERNAL_FILES_SILENTLY\" value=\"true\" />\r\n  </component>\r\n  <component name=\"WindowStateProjectService\">\r\n    <state x=\"-1230\" y=\"286\" key=\"#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog\" timestamp=\"1605331771665\">\r\n      <screen x=\"-1920\" y=\"0\" width=\"1920\" height=\"1080\" />\r\n    </state>\r\n    <state x=\"-1230\" y=\"286\" key=\"#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/-1920.0.1920.1080/-3600.0.1680.1050/0.0.1920.1080@-1920.0.1920.1080\" timestamp=\"1605331771665\" />\r\n    <state x=\"690\" y=\"275\" key=\"#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040\" timestamp=\"1605309462625\" />\r\n    <state x=\"-1353\" y=\"115\" key=\"CommitChangelistDialog2\" timestamp=\"1605317906078\">\r\n      <screen x=\"-1920\" y=\"0\" width=\"1920\" height=\"1080\" />\r\n    </state>\r\n    <state x=\"-1353\" y=\"115\" key=\"CommitChangelistDialog2/-1920.0.1920.1080/-3600.0.1680.1050/0.0.1920.1080@-1920.0.1920.1080\" timestamp=\"1605317906078\" />\r\n    <state width=\"1878\" height=\"305\" key=\"GridCell.Tab.0.bottom\" timestamp=\"1605315094038\">\r\n      <screen x=\"-1920\" y=\"0\" width=\"1920\" height=\"1080\" />\r\n    </state>\r\n    <state width=\"1878\" height=\"305\" key=\"GridCell.Tab.0.bottom/-1920.0.1920.1080/-3600.23.1680.1027/0.23.1920.1057@-1920.0.1920.1080\" timestamp=\"1605315094038\" />\r\n    <state width=\"1878\" height=\"305\" key=\"GridCell.Tab.0.center\" timestamp=\"1605315094037\">\r\n      <screen x=\"-1920\" y=\"0\" width=\"1920\" height=\"1080\" />\r\n    </state>\r\n    <state width=\"1878\" height=\"305\" key=\"GridCell.Tab.0.center/-1920.0.1920.1080/-3600.23.1680.1027/0.23.1920.1057@-1920.0.1920.1080\" timestamp=\"1605315094037\" />\r\n    <state width=\"1878\" height=\"305\" key=\"GridCell.Tab.0.left\" timestamp=\"1605315094036\">\r\n      <screen x=\"-1920\" y=\"0\" width=\"1920\" height=\"1080\" />\r\n    </state>\r\n    <state width=\"1878\" height=\"305\" key=\"GridCell.Tab.0.left/-1920.0.1920.1080/-3600.23.1680.1027/0.23.1920.1057@-1920.0.1920.1080\" timestamp=\"1605315094036\" />\r\n    <state width=\"1878\" height=\"305\" key=\"GridCell.Tab.0.right\" timestamp=\"1605315094037\">\r\n      <screen x=\"-1920\" y=\"0\" width=\"1920\" height=\"1080\" />\r\n    </state>\r\n    <state width=\"1878\" height=\"305\" key=\"GridCell.Tab.0.right/-1920.0.1920.1080/-3600.23.1680.1027/0.23.1920.1057@-1920.0.1920.1080\" timestamp=\"1605315094037\" />\r\n    <state x=\"-1137\" y=\"470\" key=\"NewPhpFileDialog\" timestamp=\"1605372185691\">\r\n      <screen x=\"-1920\" y=\"0\" width=\"1920\" height=\"1080\" />\r\n    </state>\r\n    <state x=\"-1137\" y=\"470\" key=\"NewPhpFileDialog/-1920.0.1920.1080/-3600.0.1680.1050/0.0.1920.1080@-1920.0.1920.1080\" timestamp=\"1605372185691\" />\r\n    <state x=\"-1452\" y=\"179\" key=\"SettingsEditor\" timestamp=\"1605315073406\">\r\n      <screen x=\"-1920\" y=\"0\" width=\"1920\" height=\"1080\" />\r\n    </state>\r\n    <state x=\"-1452\" y=\"179\" key=\"SettingsEditor/-1920.0.1920.1080/-3600.23.1680.1027/0.23.1920.1057@-1920.0.1920.1080\" timestamp=\"1605315073406\" />\r\n    <state width=\"600\" height=\"428\" key=\"javadoc.popup\" timestamp=\"1605367435330\">\r\n      <screen x=\"-1920\" y=\"0\" width=\"1920\" height=\"1080\" />\r\n    </state>\r\n    <state width=\"600\" height=\"428\" key=\"javadoc.popup/-1920.0.1920.1080/-3600.0.1680.1050/0.0.1920.1080@-1920.0.1920.1080\" timestamp=\"1605367435330\" />\r\n    <state x=\"-1295\" y=\"241\" width=\"670\" height=\"676\" key=\"search.everywhere.popup\" timestamp=\"1605368950749\">\r\n      <screen x=\"-1920\" y=\"0\" width=\"1920\" height=\"1080\" />\r\n    </state>\r\n    <state x=\"-1295\" y=\"241\" width=\"670\" height=\"676\" key=\"search.everywhere.popup/-1920.0.1920.1080/-3600.0.1680.1050/0.0.1920.1080@-1920.0.1920.1080\" timestamp=\"1605368950749\" />\r\n  </component>\r\n</project>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/workspace.xml	(revision 6233763c40d23f5634cecae566fdda33518abc1d)
++++ .idea/workspace.xml	(date 1605377620542)
+@@ -1,14 +1,21 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
++  <component name="BranchesTreeState">
++    <expand />
++    <select />
++  </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="f98a822f-ded9-45a1-9189-470d5e0f9f03" name="Default Changelist" comment="">
+-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/footer.blade.php" afterDir="false" />
++    <list default="true" id="f98a822f-ded9-45a1-9189-470d5e0f9f03" name="Default Changelist" comment="Adding MFSC for Volunteer y Post. Mas arregle Files que le faltaba referencia">
++      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/PostCommentsController.php" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/app/Models/PostComments.php" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/database/factories/PostCommentsFactory.php" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/database/migrations/2020_11_14_172104_create_post_comments_table.php" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/database/seeders/PostCommentsSeeder.php" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/public/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/styles.css" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/resources/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/css/styles.css" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/default.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/default.blade.php" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/header.blade.php" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/app/Models/Organization.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Organization.php" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/app/Models/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Post.php" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/database/factories/OrganizationFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/OrganizationFactory.php" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -194,20 +201,42 @@
+       <workItem from="1605315105048" duration="15741000" />
+       <workItem from="1605356232662" duration="9888000" />
+     </task>
++    <task id="LOCAL-00001" summary="Adding MFSC for Volunteer y Post. Mas arregle Files que le faltaba referencia">
++      <created>1605374241531</created>
++      <option name="number" value="00001" />
++      <option name="presentableId" value="LOCAL-00001" />
++      <option name="project" value="LOCAL" />
++      <updated>1605374241531</updated>
++    </task>
++    <option name="localTasksCounter" value="2" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+     <option name="version" value="3" />
++  </component>
++  <component name="Vcs.Log.Tabs.Properties">
++    <option name="TAB_STATES">
++      <map>
++        <entry key="MAIN">
++          <value>
++            <State />
++          </value>
++        </entry>
++      </map>
++    </option>
++    <option name="oldMeFiltersMigrated" value="true" />
+   </component>
+   <component name="VcsManagerConfiguration">
+     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
++    <MESSAGE value="Adding MFSC for Volunteer y Post. Mas arregle Files que le faltaba referencia" />
++    <option name="LAST_COMMIT_MESSAGE" value="Adding MFSC for Volunteer y Post. Mas arregle Files que le faltaba referencia" />
+   </component>
+   <component name="WindowStateProjectService">
+-    <state x="-1230" y="286" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1605331771665">
+-      <screen x="-1920" y="0" width="1920" height="1080" />
++    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1605377014337">
++      <screen x="0" y="0" width="1920" height="1040" />
+     </state>
+     <state x="-1230" y="286" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/-1920.0.1920.1080/-3600.0.1680.1050/0.0.1920.1080@-1920.0.1920.1080" timestamp="1605331771665" />
+-    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605309462625" />
++    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605377014337" />
+     <state x="-1353" y="115" key="CommitChangelistDialog2" timestamp="1605317906078">
+       <screen x="-1920" y="0" width="1920" height="1080" />
+     </state>
+@@ -236,6 +265,10 @@
+       <screen x="-1920" y="0" width="1920" height="1080" />
+     </state>
+     <state x="-1452" y="179" key="SettingsEditor/-1920.0.1920.1080/-3600.23.1680.1027/0.23.1920.1057@-1920.0.1920.1080" timestamp="1605315073406" />
++    <state x="552" y="240" key="Vcs.Push.Dialog.v2" timestamp="1605374243311">
++      <screen x="0" y="0" width="1920" height="1040" />
++    </state>
++    <state x="552" y="240" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1605374243311" />
+     <state width="600" height="428" key="javadoc.popup" timestamp="1605367435330">
+       <screen x="-1920" y="0" width="1920" height="1080" />
+     </state>
+@@ -245,4 +278,4 @@
+     </state>
+     <state x="-1295" y="241" width="670" height="676" key="search.everywhere.popup/-1920.0.1920.1080/-3600.0.1680.1050/0.0.1920.1080@-1920.0.1920.1080" timestamp="1605368950749" />
+   </component>
+-</project>
++</project>
+\ No newline at end of file
+Index: app/Http/Controllers/PostCommentsController.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/Http/Controllers/PostCommentsController.php	(date 1605374469493)
++++ app/Http/Controllers/PostCommentsController.php	(date 1605374469493)
+@@ -0,0 +1,10 @@
++<?php
++
++namespace App\Http\Controllers;
++
++use Illuminate\Http\Request;
++
++class PostCommentsController extends Controller
++{
++    //
++}
+Index: database/factories/OrganizationFactory.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php\r\n\r\nnamespace Database\\Factories;\r\n\r\nuse App\\Models\\Organization;\r\nuse Illuminate\\Database\\Eloquent\\Factories\\Factory;\r\n\r\nclass OrganizationFactory extends Factory\r\n{\r\n    /**\r\n     * The name of the factory's corresponding model.\r\n     *\r\n     * @var string\r\n     */\r\n    protected $model = Organization::class;\r\n\r\n    /**\r\n     * Define the model's default state.\r\n     *\r\n     * @return array\r\n     */\r\n    public function definition()\r\n    {\r\n        return [\r\n            'name'=>$this->faker->company,\r\n            'description'=>$this->faker->text,\r\n            'mission'=>$this->faker->text,\r\n            'vision'=>$this->faker->text,\r\n            'email'=>$this->faker->unique()->companyEmail,\r\n            'phone_number_one'=>$this->faker->phoneNumber,\r\n            'phone_number_two'=>$this->faker->phoneNumber,\r\n            'org_logo'=>'https://via.placeholder.com/150'\r\n        ];\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- database/factories/OrganizationFactory.php	(revision 6233763c40d23f5634cecae566fdda33518abc1d)
++++ database/factories/OrganizationFactory.php	(date 1605377577499)
+@@ -29,7 +29,7 @@
+             'email'=>$this->faker->unique()->companyEmail,
+             'phone_number_one'=>$this->faker->phoneNumber,
+             'phone_number_two'=>$this->faker->phoneNumber,
+-            'org_logo'=>'https://via.placeholder.com/150'
++            'org_logo'=>'https://via.placeholder.com/320x160'
+         ];
+     }
+ }
+Index: app/Models/Post.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php\r\n\r\nnamespace App\\Models;\r\n\r\nuse Illuminate\\Database\\Eloquent\\Factories\\HasFactory;\r\nuse Illuminate\\Database\\Eloquent\\Model;\r\n\r\nclass Post extends Model\r\n{\r\n    use HasFactory;\r\n    protected $fillable=['title','description'];\r\n\r\n    public function organization()\r\n    {\r\n        return $this->belongsTo(Organization::class);\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/Models/Post.php	(revision 6233763c40d23f5634cecae566fdda33518abc1d)
++++ app/Models/Post.php	(date 1605376105186)
+@@ -14,4 +14,8 @@
+     {
+         return $this->belongsTo(Organization::class);
+     }
++    public function posts()
++    {
++        return $this->hasMany(\App\Models\PostComments::class,'org_id','id');
++    }
+ }
+Index: database/factories/PostCommentsFactory.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- database/factories/PostCommentsFactory.php	(date 1605377385124)
++++ database/factories/PostCommentsFactory.php	(date 1605377385124)
+@@ -0,0 +1,31 @@
++<?php
++
++namespace Database\Factories;
++
++use App\Models\Organization;
++use App\Models\Post;
++use App\Models\PostComments;
++use Illuminate\Database\Eloquent\Factories\Factory;
++
++class PostCommentsFactory extends Factory
++{
++    /**
++     * The name of the factory's corresponding model.
++     *
++     * @var string
++     */
++    protected $model = PostComments::class;
++
++    /**
++     * Define the model's default state.
++     *
++     * @return array
++     */
++    public function definition()
++    {
++        return [
++                    'comment'=>$this->faker->catchPhrase,
++                    'post_id' => Post::all()->random()->id
++        ];
++    }
++}
+Index: app/Models/PostComments.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/Models/PostComments.php	(date 1605376998897)
++++ app/Models/PostComments.php	(date 1605376998897)
+@@ -0,0 +1,17 @@
++<?php
++
++namespace App\Models;
++
++use Illuminate\Database\Eloquent\Factories\HasFactory;
++use Illuminate\Database\Eloquent\Model;
++
++class PostComments extends Model
++{
++    use HasFactory;
++    protected $fillable=['comment','post_id'];
++
++    public function organization()
++    {
++        return $this->belongsTo(Post::class);
++    }
++}
+Index: database/migrations/2020_11_14_172104_create_post_comments_table.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- database/migrations/2020_11_14_172104_create_post_comments_table.php	(date 1605375688486)
++++ database/migrations/2020_11_14_172104_create_post_comments_table.php	(date 1605375688486)
+@@ -0,0 +1,34 @@
++<?php
++
++use Illuminate\Database\Migrations\Migration;
++use Illuminate\Database\Schema\Blueprint;
++use Illuminate\Support\Facades\Schema;
++
++class CreatePostCommentsTable extends Migration
++{
++    /**
++     * Run the migrations.
++     *
++     * @return void
++     */
++    public function up()
++    {
++        Schema::create('post_comments', function (Blueprint $table) {
++            $table->id();
++            $table->unsignedBigInteger('post_id');
++            $table->string('comment');
++            $table->foreign('post_id')->references('id')->on('posts');
++            $table->timestamps();
++        });
++    }
++
++    /**
++     * Reverse the migrations.
++     *
++     * @return void
++     */
++    public function down()
++    {
++        Schema::dropIfExists('post_comments');
++    }
++}
