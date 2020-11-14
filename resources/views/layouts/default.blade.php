@@ -30,5 +30,6 @@
         crossorigin="anonymous"></script>
     <script src="{{ asset('js/semantic.min.js') }}"></script>
     @yield('scripts')
+    @include('layouts.footer')
 </body>
 </html>

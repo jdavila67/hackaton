@@ -5,8 +5,8 @@
         </div>
         <div class="social">
             <ul>
-                <li><a href=""><i class="fab fa-facebook"></i></a></li>
-                <li><a href=""><i class="fab fa-instagram-square"></i></a></li>
+                <li><a href=""><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href=""><i class="fab fa-instagram"></i></a></li>
             </ul>
         </div>
     </div>

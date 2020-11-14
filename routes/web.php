@@ -17,6 +17,22 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/eventos', function () {
+    return view('welcome');
+})->name('home.event');
+
+Route::get('/organizaciones', function () {
+    return view('welcome');
+})->name('home.organization');
+
+Route::get('/donaciones', function () {
+    return view('welcome');
+})->name('home.donation');
+
+Route::get('/sobre-nosotros', function () {
+    return view('welcome');
+})->name('home.about');
+
 
 Route::prefix('portal')->middleware(['auth:sanctum', 'verified']) ->group(function () {
     Route::get('/', function () {

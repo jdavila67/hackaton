@@ -67,7 +67,6 @@
     height: 100%;
 }
 
-
 .header .header-top .social {
     position: absolute;
     right: 100px;
@@ -114,4 +113,11 @@
 
 .header-menu ul li  a.active {
     border-bottom: solid 1px #3DB4D9;
+}
+
+/* Footer */
+.footer {
+    width: 100%;
+    height: 320px;
+    background-color: #282E37;
 }
