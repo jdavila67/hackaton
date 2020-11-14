@@ -12,6 +12,7 @@
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/semantic.min.css') }}">
 
         @livewireStyles
 
@@ -21,22 +22,30 @@
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">
             @livewire('navigation-dropdown')
-
             <!-- Page Heading -->
             <header class="bg-white shadow">
-                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                <div class="mx-auto py-6 px-4 sm:px-6 lg:px-8">
                     {{ $header }}
                 </div>
             </header>
-
             <!-- Page Content -->
             <main>
-                {{ $slot }}
+                <div class="py-6">
+                    <div class="mx-auto sm:px-6 lg:px-8">
+                        <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
+                            {{ $slot }}
+                        </div>
+                    </div>
+                </div>
             </main>
         </div>
-
         @stack('modals')
-
         @livewireScripts
+        <script
+            src="https://code.jquery.com/jquery-3.1.1.min.js"
+            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+            crossorigin="anonymous"></script>
+        <script src="{{ asset('js/semantic.min.js') }}"></script>
+        @yield('scripts')
     </body>
 </html>

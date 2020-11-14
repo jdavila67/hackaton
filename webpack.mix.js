@@ -17,3 +17,6 @@ mix.js('resources/js/app.js', 'public/js')
         require('tailwindcss'),
     ])
     .webpackConfig(require('./webpack.config'));
+
+mix.copy('resources/vendor/Semantic-UI-CSS-master/semantic.min.css', 'public/css/semantic.min.css');
+mix.copy('resources/vendor/Semantic-UI-CSS-master/semantic.min.js', 'public/js/semantic.min.js');
