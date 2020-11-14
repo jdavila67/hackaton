@@ -15,21 +15,33 @@
             </div>
             <div class="field full">
                 <label>Nombre</label>
-                <input type="text" placeholder="Nombre" name="name" required value="{{old('name', $organization->name)}}">
+                <input type="text" placeholder="Nombre" name="name" required
+                       value="{{old('name', $organization->name)}}">
             </div>
             <div class="three fields">
                 <div class="field">
                     <label>Correo Electrónico</label>
-                    <input type="email" name="email" placeholder="Correo Electrónico" required value="{{old('email', $organization->email)}}">
+                    <input type="email" name="email" placeholder="Correo Electrónico" required
+                           value="{{old('email', $organization->email)}}">
                 </div>
                 <div class="field">
                     <label>Teléfono</label>
-                    <input type="text" name="phone_1" placeholder="Teléfono" required value="{{old('phone_1', $organization->phone_number_one)}}">
+                    <input type="text" name="phone_1" placeholder="Teléfono" required
+                           value="{{old('phone_1', $organization->phone_number_one)}}">
                 </div>
                 <div class="field">
                     <label>Teléfono 2</label>
-                    <input type="text" name="phone_2" placeholder="Teléfono"  value="{{old('phone_2', $organization->phone_number_two)}}">
+                    <input type="text" name="phone_2" placeholder="Teléfono"
+                           value="{{old('phone_2', $organization->phone_number_two)}}">
                 </div>
+            </div>
+            <div class="field full">
+                <label>Tags</label>
+                <select name="skills" multiple="" class="ui search fluid dropdown">
+                    @foreach ($organization->organizationTags as $item)
+                        <option selected value="{{$item->tag}}">{{$item->tag}}</option>
+                    @endforeach
+                </select>
             </div>
             <div class="two fields">
                 <div class="field">
@@ -75,6 +87,9 @@
                 });
 
             });
+            $('.ui .dropdown').dropdown({
+                allowAdditions: true
+            })
         </script>
     @endsection
 </x-app-layout>

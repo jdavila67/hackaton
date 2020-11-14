@@ -31,6 +31,10 @@
                     <input type="text" name="phone_2" placeholder="Teléfono" required>
                 </div>
             </div>
+            <div class="field full">
+                <label>Tags</label>
+                <select name="skills" multiple="" class="ui search fluid dropdown"></select>
+            </div>
             <div class="two fields">
                 <div class="field">
                     <label>Mision</label>
@@ -73,7 +77,9 @@
                         $('#logo').attr('src', 'https://via.placeholder.com/150');
                     }
                 });
-
+            });
+            $('.ui .dropdown').dropdown({
+                allowAdditions: true
             });
         </script>
     @endsection

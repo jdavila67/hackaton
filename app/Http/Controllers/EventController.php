@@ -31,6 +31,6 @@ class EventController extends Controller
      * param $id = organization id
      */
     public function create($id) {
-        return view('organization.events.create');
+        return view('organization.events.create', ['id' => $id]);
     }
 }
