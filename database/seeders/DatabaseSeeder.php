@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         Role::factory()->times(3)->create();
-        Organization::factory()->count(10)->hasPosts(2)->hasFiles(2)->hasOrganizationMembers(5)->hasOrganizationTags(5)->hasContacts(2)->hasEvents(5)->hasAddresses(1)->create();
+        Organization::factory()->count(10)->hasvolunteers(4)->hasPosts(2)->hasFiles(2)->hasOrganizationMembers(5)->hasOrganizationTags(5)->hasContacts(2)->hasEvents(5)->hasAddresses(1)->create();
         //User::factory()->count(10)->create();
         User::factory()->count(10)->create();
         UserOrganization::factory()->count(15)->create();

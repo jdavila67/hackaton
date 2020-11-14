@@ -16,6 +16,14 @@
     margin: 0 auto !important;
 }
 
+.a-m-5-auto {
+    margin: 5px auto !important;
+}
+
+.a-m-12 {
+    margin: 5px 0 !important;
+}
+
 /* Padding */
 .a-p-12 {
     padding: 12px !important;
@@ -133,6 +141,11 @@ main .content {
     text-decoration: none;
     color: inherit;
 }
+
+.profile-volunatarios {
+    margin: 24px 0px;
+}
+
 /* Footer */
 .footer {
     width: 100%;
