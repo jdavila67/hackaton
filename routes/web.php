@@ -17,6 +17,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+
+Route::middleware(['auth:sanctum', 'verified'])->group(function () {
+    Route::get('/', function () {
+        return view('dashboard');
+    })->name('dashboard');
+
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+
+    /* Organization Router */
+    Route::prefix('organizacion')->group(function () {
+        Route::get('/', [\App\Http\Controllers\OrganizationController::class, 'index'])->name('organization');
+        Route::get('/anadir', [\App\Http\Controllers\OrganizationController::class, 'create'])->name('organization.create');
+    });
+});
