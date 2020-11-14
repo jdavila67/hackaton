@@ -2,10 +2,9 @@
 
 namespace Database\Seeders;
 
-use App\Models\Organization;
 use Illuminate\Database\Seeder;
 
-class OrganizationSeeder extends Seeder
+class ContactSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,6 +13,6 @@ class OrganizationSeeder extends Seeder
      */
     public function run()
     {
-        Organization::factory()->count(50)->hasFiles(2)->hasContacts(2)->hasEvents(5)->hasAddresses(2)->create();
+        //
     }
 }

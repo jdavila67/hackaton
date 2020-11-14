@@ -28,7 +28,8 @@ class OrganizationFactory extends Factory
             'vision'=>$this->faker->text,
             'email'=>$this->faker->unique()->companyEmail,
             'phone_number_one'=>$this->faker->phoneNumber,
-            'phone_number_two'=>$this->faker->phoneNumber
+            'phone_number_two'=>$this->faker->phoneNumber,
+            'org_logo'=>$this->faker->rgbColor
         ];
     }
 }
