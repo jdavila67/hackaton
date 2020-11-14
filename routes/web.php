@@ -12,27 +12,12 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-})->name('home');
-
-Route::get('/eventos', function () {
-    return view('event');
-})->name('home.event');
-
-Route::get('/organizaciones', function () {
-    return view('organization');
-})->name('home.organization');
-
-Route::get('/donaciones', function () {
-    return view('donation');
-})->name('home.donation');
-
-Route::get('/sobre-nosotros', function () {
-    return view('about');
-})->name('home.about');
-
+Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/eventos', [\App\Http\Controllers\HomeController::class, 'event'])->name('home.event');
+Route::get('/organizaciones', [\App\Http\Controllers\HomeController::class, 'organization'])->name('home.organization');
+Route::get('/organizaciones/perfil/{id}', [\App\Http\Controllers\HomeController::class, 'profile'])->name('home.organization.profile');
+Route::get('/donaciones', [\App\Http\Controllers\HomeController::class, 'donation'])->name('home.donation');
+Route::get('/sobre-nosotros', [\App\Http\Controllers\HomeController::class, 'about'])->name('home.about');
 
 Route::prefix('portal')->middleware(['auth:sanctum', 'verified']) ->group(function () {
     Route::get('/', function () {

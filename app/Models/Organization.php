@@ -12,7 +12,7 @@ class Organization extends Model
 
     public function addresses()
     {
-        return $this->hasMany(\App\Models\Address::class,'org_id','id');
+        return $this->hasOne(\App\Models\Address::class,'org_id','id');
     }
     public function events()
     {

@@ -22,7 +22,11 @@
 </head>
 <body class="body">
     @include('layouts.header')
-    @yield('content')
+    <main>
+        <div class="content">
+            @yield('content')
+        </div>
+    </main>
     @livewireScripts
     <script
         src="https://code.jquery.com/jquery-3.1.1.min.js"
