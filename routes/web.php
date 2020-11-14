@@ -18,7 +18,7 @@ Route::get('/', function () {
 });
 
 
-Route::middleware(['auth:sanctum', 'verified'])->group(function () {
+Route::prefix('portal')->middleware(['auth:sanctum', 'verified']) ->group(function () {
     Route::get('/', function () {
         return view('dashboard');
     })->name('dashboard');
