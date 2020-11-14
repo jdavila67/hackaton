@@ -37,4 +37,12 @@ class Organization extends Model
     public function users() {
         return $this->belongsToMany(\App\Models\UserOrganization::class, 'org_id', 'id');
     }
+    public function volunteers()
+    {
+        return $this->hasMany(\App\Models\Volunteer::class,'org_id','id');
+    }
+    public function posts()
+    {
+        return $this->hasMany(\App\Models\Post::class,'org_id','id');
+    }
 }
