@@ -23,10 +23,11 @@ class EventFactory extends Factory
     {
         return [
             'event_date'=>$this->faker->dateTime,
-            'event_duration_time'=>$this->faker->numberBetween(1,24),
+            'event_time_from'=>$this->faker->time(),
+            'event_time_to'=>$this->faker->time(),
             'event_title'=>$this->faker->company,
             'event_desc'=>$this->faker->text,
-            'event_location'=>$this->faker->text,
+            'event_location'=>$this->faker->city,
             'event_coordinates'=>$this->faker->longitude,
             'is_active'=>$this->faker->boolean
         ];

@@ -33,9 +33,17 @@ Route::prefix('portal')->middleware(['auth:sanctum', 'verified']) ->group(functi
         Route::get('/anadir', [\App\Http\Controllers\OrganizationController::class, 'create'])->name('organization.create');
         Route::get('/actualizar/{id}', [\App\Http\Controllers\OrganizationController::class, 'edit'])->name('organization.edit');
 
+        /* Members */
         Route::prefix('miembros')->group(function(){
             Route::get('/{id}',[\App\Http\Controllers\OrganizationMemberController::class, 'index'])->name('member.index');
             Route::get('/actualizar/{org}/{id}',[\App\Http\Controllers\OrganizationMemberController::class, 'edit'])->name('member.edit');
+        });
+
+        /* Events */
+        Route::prefix('eventos')->group(function(){
+            Route::get('/{id}',[\App\Http\Controllers\EventController::class, 'index'])->name('event.index');
+            Route::get('/anadir/{id}',[\App\Http\Controllers\EventController::class, 'create'])->name('event.create');
+            Route::get('/actualizar/{org}/{id}',[\App\Http\Controllers\EventController::class, 'edit'])->name('event.edit');
         });
     });
 

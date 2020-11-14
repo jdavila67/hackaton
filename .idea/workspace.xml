@@ -2,11 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f98a822f-ded9-45a1-9189-470d5e0f9f03" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/organization/events/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/organization/events/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/organization/events/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/OrganizationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/OrganizationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/UserOrganization.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/UserOrganization.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/EventController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/EventController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Event.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Event.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/EventFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/EventFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_14_003402_create_events_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_14_003402_create_events_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/navigation-dropdown.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/navigation-dropdown.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/organization/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/organization/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -190,7 +196,7 @@
       <workItem from="1605307776615" duration="275000" />
       <workItem from="1605308408405" duration="5081000" />
       <workItem from="1605315105048" duration="15741000" />
-      <workItem from="1605356232662" duration="1223000" />
+      <workItem from="1605356232662" duration="4291000" />
     </task>
     <servers />
   </component>
@@ -226,10 +232,10 @@
       <screen x="-1920" y="0" width="1920" height="1080" />
     </state>
     <state width="1878" height="305" key="GridCell.Tab.0.right/-1920.0.1920.1080/-3600.23.1680.1027/0.23.1920.1057@-1920.0.1920.1080" timestamp="1605315094037" />
-    <state x="-1137" y="470" key="NewPhpFileDialog" timestamp="1605328986878">
+    <state x="-1137" y="470" key="NewPhpFileDialog" timestamp="1605358055652">
       <screen x="-1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="-1137" y="470" key="NewPhpFileDialog/-1920.0.1920.1080/-3600.0.1680.1050/0.0.1920.1080@-1920.0.1920.1080" timestamp="1605328986878" />
+    <state x="-1137" y="470" key="NewPhpFileDialog/-1920.0.1920.1080/-3600.0.1680.1050/0.0.1920.1080@-1920.0.1920.1080" timestamp="1605358055652" />
     <state x="-1452" y="179" key="SettingsEditor" timestamp="1605315073406">
       <screen x="-1920" y="0" width="1920" height="1080" />
     </state>
@@ -238,9 +244,9 @@
       <screen x="-1920" y="0" width="1920" height="1080" />
     </state>
     <state width="600" height="428" key="javadoc.popup/-1920.0.1920.1080/-3600.0.1680.1050/0.0.1920.1080@-1920.0.1920.1080" timestamp="1605324999180" />
-    <state x="-1295" y="241" width="670" height="676" key="search.everywhere.popup" timestamp="1605328743517">
+    <state x="-1295" y="241" width="670" height="676" key="search.everywhere.popup" timestamp="1605365610343">
       <screen x="-1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="-1295" y="241" width="670" height="676" key="search.everywhere.popup/-1920.0.1920.1080/-3600.0.1680.1050/0.0.1920.1080@-1920.0.1920.1080" timestamp="1605328743517" />
+    <state x="-1295" y="241" width="670" height="676" key="search.everywhere.popup/-1920.0.1920.1080/-3600.0.1680.1050/0.0.1920.1080@-1920.0.1920.1080" timestamp="1605365610343" />
   </component>
 </project>
