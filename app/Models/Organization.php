@@ -45,4 +45,5 @@ class Organization extends Model
     {
         return $this->hasMany(\App\Models\Post::class,'org_id','id');
     }
+
 }

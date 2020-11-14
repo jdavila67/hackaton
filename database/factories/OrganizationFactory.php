@@ -29,7 +29,7 @@ class OrganizationFactory extends Factory
             'email'=>$this->faker->unique()->companyEmail,
             'phone_number_one'=>$this->faker->phoneNumber,
             'phone_number_two'=>$this->faker->phoneNumber,
-            'org_logo'=>'https://via.placeholder.com/150'
+            'org_logo'=>'https://via.placeholder.com/320x160'
         ];
     }
 }

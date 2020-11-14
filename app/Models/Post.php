@@ -14,4 +14,8 @@ class Post extends Model
     {
         return $this->belongsTo(Organization::class);
     }
+    public function posts()
+    {
+        return $this->hasMany(\App\Models\PostComments::class,'org_id','id');
+    }
 }
