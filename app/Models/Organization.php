@@ -26,4 +26,12 @@ class Organization extends Model
     {
         return $this->hasMany(\App\Models\File::class,'org_id','id');
     }
+    public function organizationMembers()
+    {
+        return $this->hasMany(\App\Models\OrganizationMember::class,'org_id','id');
+    }
+    public function organizationTags()
+    {
+        return $this->hasMany(\App\Models\OrganizationTag::class,'org_id','id');
+    }
 }
