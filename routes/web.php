@@ -29,6 +29,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 
     /* Organization Router */
     Route::prefix('organizacion')->group(function () {
-        Route::get('/', [\App\Http\Controllers\OrganizationController::class, 'index'])->name('organizacion');
+        Route::get('/', [\App\Http\Controllers\OrganizationController::class, 'index'])->name('organization');
+        Route::get('/anadir', [\App\Http\Controllers\OrganizationController::class, 'create'])->name('organization.create');
     });
 });

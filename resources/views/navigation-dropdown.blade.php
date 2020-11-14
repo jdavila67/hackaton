@@ -15,7 +15,7 @@
                     <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-jet-nav-link>
-                    <x-jet-nav-link href="{{ route('organizacion') }}" :active="request()->routeIs('organizacion')">
+                    <x-jet-nav-link href="{{ route('organization') }}" :active="request()->routeIs('organization')">
                         {{ __('Organizaciónes') }}
                     </x-jet-nav-link>
                 </div>
@@ -52,7 +52,7 @@
                             {{ __('Perfil') }}
                         </x-jet-dropdown-link>
 
-                        <x-jet-dropdown-link href="{{ route('organizacion') }}">
+                        <x-jet-dropdown-link href="{{ route('organization') }}">
                             {{ __('Organizaciones') }}
                         </x-jet-dropdown-link>
 

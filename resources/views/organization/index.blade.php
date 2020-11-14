@@ -3,9 +3,9 @@
     @section('action')
         <div class="ui grid a-p-t-b-6 a-text-right">
             <div class="column">
-                <button class="ui button primary">
+                <a class="ui button primary" href="{{route('organization.create')}}">
                     <i class="fas fa-plus"></i> Crear
-                </button>
+                </a>
             </div>
         </div>
     @endsection
