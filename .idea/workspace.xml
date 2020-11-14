@@ -2,24 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f98a822f-ded9-45a1-9189-470d5e0f9f03" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/UserOrganizationController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/UserOrganization.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/factories/UserOrganizationFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_11_14_050423_create_user_organizations_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeders/UserOrganizationSeeder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/organization/member/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/organization/member/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/OrganizationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/OrganizationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/OrganizationMemberController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/OrganizationMemberController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Organization.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Organization.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/OrganizationFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/OrganizationFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/OrganizationMemberFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/OrganizationMemberFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/organization/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/organization/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/organization/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/organization/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/UserOrganization.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/UserOrganization.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,7 +189,8 @@
       <updated>1605307775578</updated>
       <workItem from="1605307776615" duration="275000" />
       <workItem from="1605308408405" duration="5081000" />
-      <workItem from="1605315105048" duration="15318000" />
+      <workItem from="1605315105048" duration="15741000" />
+      <workItem from="1605356232662" duration="1223000" />
     </task>
     <servers />
   </component>

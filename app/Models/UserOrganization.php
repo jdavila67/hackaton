@@ -11,11 +11,11 @@ class UserOrganization extends Model
 
     protected $fillable = ['user_id', 'org_id'];
 
-    public function organizations() {
-        return $this->belongsTo(\App\Models\Organization::class, 'id', 'org_id');
+    public function organization() {
+        return $this->hasOne(\App\Models\Organization::class, 'id', 'org_id');
     }
 
-    public function users() {
-        return $this->belongsTo(\App\Models\User::class, 'id', 'user_id');
+    public function user() {
+        return $this->hasOne(\App\Models\User::class, 'id', 'user_id');
     }
 }

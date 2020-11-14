@@ -67,6 +67,6 @@ class User extends Authenticatable
     }
 
     public function organizations() {
-        return $this->belongsTo(\App\Models\UserOrganization::class, 'user_id', 'id');
+        return $this->hasMany(\App\Models\UserOrganization::class, 'user_id', 'id')->with('organization');
     }
 }
