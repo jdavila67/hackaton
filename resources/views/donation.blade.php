@@ -15,17 +15,17 @@
                <div class="ui stackable four column grid">
                    <div class="column">
                        <div class="donation">
-                           <span>$1.00</span>
+                           <span><a href="{{route('home.donation.paypal', ['amount' => "1.00"])}}">$1.00</a></span>
                        </div>
                    </div>
                    <div class="column">
                        <div class="donation">
-                           <span>$5.00</span>
+                           <span><a href="{{route('home.donation.paypal', ['amount' => "5.00"])}}">$5.00</a></span>
                        </div>
                    </div>
                    <div class="column">
                        <div class="donation">
-                           <span>$10.00</span>
+                           <span><a href="{{route('home.donation.paypal', ['amount' => "10.00"])}}">$10.00</a></span>
                        </div>
                    </div>
                    <div class="column">

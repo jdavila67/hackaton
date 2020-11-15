@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Event;
 use App\Models\Organization;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
+use Srmklive\PayPal\Services\ExpressCheckout;
 
 class HomeController extends Controller
 {
@@ -39,7 +41,8 @@ class HomeController extends Controller
         return view('organization_profile', ['data' => $data]);
     }
 
-    public function perfil($name) {
+    public function perfil($name)
+    {
         $data = Organization::where('name', '=', $name)->first();
         if (!$data) return redirect(route('home.organization'));
         return view('organization_profile', ['data' => $data]);
@@ -50,7 +53,8 @@ class HomeController extends Controller
         return view('event');
     }
 
-    public function event_org($id) {
+    public function event_org($id)
+    {
         return view('event_org', ['events' => Event::where('org_id', '=', $id)->get()]);
     }
 
@@ -66,7 +70,7 @@ class HomeController extends Controller
         $tags = $organization->organizationTags->pluck('tag');
 
         // get organization with tags
-        $organizations = Organization::whereHas('organizationTags', function($query) use ($tags) {
+        $organizations = Organization::whereHas('organizationTags', function ($query) use ($tags) {
             $query->whereIn('tag', $tags);
         })->where('id', '!=', $organization->id)->get();
 
@@ -76,5 +80,39 @@ class HomeController extends Controller
     public function post()
     {
         return view('post');
+    }
+
+    public function paypal($amount)
+    {
+        $product = [];
+        $product['items'] = [];
+        array_push($product['items'], [
+            'name' => "Donaciones",
+            'desc' => "Donaciones",
+            'price' => $amount,
+            'qty' => 1
+        ]);
+        $product['invoice_id'] = $random = Str::random(10);;
+        $product['invoice_description'] = "Donaciones";
+        $product['return_url'] = route('home.paypal.success');
+        $product['cancel_url'] = route('home.paypal.cancel');
+        $product['total'] = $amount;
+
+        $paypalModule = new ExpressCheckout;
+
+        $res = $paypalModule->setExpressCheckout($product);
+        $res = $paypalModule->setExpressCheckout($product, true);
+
+        return redirect($res['paypal_link']);
+    }
+
+    public function paypal_success()
+    {
+        return view('paypal.success');
+    }
+
+    public function paypal_cancel()
+    {
+        return redirect(route('home'));
     }
 }

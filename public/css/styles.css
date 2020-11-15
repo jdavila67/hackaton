@@ -275,6 +275,13 @@ main .content {
     color:white;
 }
 
+.donation span a {
+    font-size: 1.45em;
+    color:white;
+    text-decoration: none;
+}
+
+
 /* Footer */
 .footer {
     width: 100%;

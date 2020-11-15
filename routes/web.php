@@ -84,4 +84,8 @@ Route::get('/organizaciones/perfil/{id}', [\App\Http\Controllers\HomeController:
 Route::get('/donaciones', [\App\Http\Controllers\HomeController::class, 'donation'])->name('home.donation');
 Route::get('/sobre-nosotros', [\App\Http\Controllers\HomeController::class, 'about'])->name('home.about');
 Route::get('/publicaciones', [\App\Http\Controllers\HomeController::class, 'post'])->name('home.post');
+Route::get('/paypal/success', [\App\Http\Controllers\HomeController::class, 'paypal_success'])->name('home.paypal.success');
+Route::get('/paypal/cancel', [\App\Http\Controllers\HomeController::class, 'paypal_cancel'])->name('home.paypal.cancel');
+Route::get('/paypal/{amount}', [\App\Http\Controllers\HomeController::class, 'paypal'])->name('home.donation.paypal');
 Route::get('/{name}', [\App\Http\Controllers\HomeController::class, 'perfil'])->name('home.organization.perfil');
+
