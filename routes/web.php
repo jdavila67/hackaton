@@ -18,6 +18,7 @@ Route::get('/organizaciones', [\App\Http\Controllers\HomeController::class, 'org
 Route::get('/organizaciones/perfil/{id}', [\App\Http\Controllers\HomeController::class, 'profile'])->name('home.organization.profile');
 Route::get('/donaciones', [\App\Http\Controllers\HomeController::class, 'donation'])->name('home.donation');
 Route::get('/sobre-nosotros', [\App\Http\Controllers\HomeController::class, 'about'])->name('home.about');
+Route::get('/publicaciones', [\App\Http\Controllers\HomeController::class, 'post'])->name('home.post');
 
 Route::prefix('portal')->middleware(['auth:sanctum', 'verified']) ->group(function () {
     Route::get('/', function () {

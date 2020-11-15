@@ -23,7 +23,8 @@ class Events extends Component
         $this->events = Event::where([
             ['event_date', '>=', $this->date_from],
             ['event_date', '<=', $this->date_to],
-            ['event_title', 'like', '%' . $this->title . '%']
+            ['event_title', 'like', '%' . $this->title . '%'],
+            ['is_active', '=', 1]
         ])->get();
 
         return view('livewire.events');

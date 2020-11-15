@@ -38,6 +38,10 @@
     padding: 6px 0px !important;
 }
 
+.a-p-b-12 {
+    padding-bottom: 12px;
+}
+
 /* Overflow  */
 .a-of-v {
     overflow: visible !important;
@@ -184,6 +188,53 @@ main .content {
     display: inline-block;
     margin: 6px;
 }
+
+/* Home */
+.section-title {
+    text-transform: uppercase;
+    font-size: 1.75em;
+    margin: 0;
+}
+
+.section-sub-title {
+    text-transform: uppercase;
+    font-size: .85em;
+}
+
+.inpact {
+    background-color: #ccc;
+    padding: 60px;
+}
+
+.inpact-content {
+    padding: 60px 0px;
+}
+
+.inpact-number {
+    font-size: 4.5rem;
+    display: block;
+    margin-bottom: 45px;
+}
+
+.inpact-title {
+    font-size: 3.5rem;
+    margin: 12px 0px;
+    display: block;
+}
+
+.section-30 {
+    padding: 30px;
+}
+
+.section-60 {
+    padding: 60px;
+}
+
+
+.events {
+    padding: 60px;
+}
+
 /* Footer */
 .footer {
     width: 100%;
