@@ -6,6 +6,7 @@
        </div>
        <livewire:organization />
    </div>
+   <div id="map"></div>
 @endsection
 @section('scripts')
 <script>

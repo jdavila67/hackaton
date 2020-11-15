@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -21,6 +21,8 @@
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.7.3/dist/alpine.js" defer></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMU1FB-J5QzW8-qnFMXqoFnlWIldM5aZU&callback"></script>
 </head>
 <body class="body">
     @include('layouts.header')
@@ -37,6 +39,18 @@
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
     <script src="{{ asset('js/semantic.min.js') }}"></script>
+    <script>
+        let map;
+        function initMap() {
+            map = new google.maps.Map(document.getElementById("map"), {
+                center: { lng: -66.4996195, lat: 18.204688 },
+                zoom: 10,
+            });
+        }
+        $(document).ready(function(){
+            initMap();
+        });
+    </script>
     @yield('scripts')
     @include('layouts.footer')
 </body>

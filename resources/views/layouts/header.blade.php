@@ -4,7 +4,7 @@
             <img src="{{url('/images/logo.png')}}" alt="logo"/>
         </div>
         <div class="header-name">
-            <span>NOMBRE APP</span>
+            <span>UNIENDO CONCIENCIA</span>
         </div>
         <div class="social">
             <ul>
@@ -21,6 +21,10 @@
             <li><a class="{{request()->routeIs('home.post') ? "active" : ""}}" href="{{route('home.post')}}">Publicaciones</a></li>
             <li><a class="{{request()->routeIs('home.event') ? "active" : ""}}" href="{{route('home.event')}}">Eventos</a></li>
             <li><a class="{{request()->routeIs('home.donation') ? "active" : ""}}" href="{{route('home.donation')}}">Donaciones</a></li>
+            <div class="login_register">
+                <a href="/login"> INICIO </a>
+                <a href="/register"> REGISTRO</a>
+            </div>
         </ul>
     </div>
 </div>

@@ -220,7 +220,7 @@
                         Donec sed odio dui. Etiam porta sem malesuada magna mollis
                         euismod. Nullam id dolor id nibh ultricies vehicula ut id elit.
                     </p>
-                    <a href="{{route('home.donation')}}" class="ui basic button">DONACIONES &raquo;</a>
+                    <a href="{{route('home.donation')}}" class="ui primary button">DONACIONES &raquo;</a>
                 </div>
             </div>
         </div>
