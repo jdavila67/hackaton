@@ -24,11 +24,11 @@
                     </div>
                 </div>
                 <div class="seven wide column">
-                    <h4>Footer Header</h4>
-                    <p>
-                        Extra space for a call to action inside the footer that could
-                        help re-engage users.
-                    </p>
+                    <h4>Inscríbete</h4>
+                    <div class="ui action input">
+                        <input type="text" placeholder="Correo Electrónico">
+                        <button class="ui button">Enviar</button>
+                    </div>
                 </div>
             </div>
         </div>

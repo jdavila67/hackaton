@@ -3,6 +3,9 @@
         <div class="logo-header">
             <img src="{{url('/images/logo.png')}}" alt="logo"/>
         </div>
+        <div class="header-name">
+            <span>NOMBRE APP</span>
+        </div>
         <div class="social">
             <ul>
                 <li><a href=""><i class="fab fa-facebook-f"></i></a></li>

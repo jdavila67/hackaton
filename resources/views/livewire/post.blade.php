@@ -2,10 +2,10 @@
     <div class="ui feed">
          @foreach($posts as $post)
         <div class="event">
-            <div class="label">
+            <div style="width: 50px;" class="label">
                 <img src="https://via.placeholder.com/140x140">
             </div>
-            <div class="content">
+            <div class="content" style="margin-top: -25px">
                 <div class="summary">
                     <a href="{{route('home.organization.profile', ['id' => $post->organizations->id])}}">{{$post->organizations->name}}</a> a publicado en su pagina
                     <div class="date">
@@ -22,13 +22,14 @@
 
                     <div class="ui comments" id="{{$post->id}}" style="display: none;">
 
-                        <h3 class="ui dividing header">Comments</h3>
+                        <h3 class="ui dividing header"></h3>
                         @foreach($post->comments as $comment)
-                        <div   class="comment" >
+                        <div  class="comment" >
                             <a class="avatar">
-                                <img src="https://via.placeholder.com/140x140">
+                                {{--<img src="https://via.placeholder.com/140x140">--}}
+                                <i class="fa-3x fas fa-user-circle"></i>
                             </a>
-                            <div class="content">
+                            <div class="content" style="margin-top: -20px">
                                 <div class="metadata">
                                     <span class="date">el {{$comment->created_at}}</span>
                                 </div>
@@ -43,7 +44,7 @@
                                 <textarea></textarea>
                             </div>
                             <div class="ui blue labeled submit icon button">
-                                <i class="icon edit"></i> Add Reply
+                                <i class="icon edit"></i> Publicar
                             </div>
                         </form>
                     </div>

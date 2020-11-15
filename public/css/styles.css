@@ -81,15 +81,32 @@
 
 .header .header-top {
     width: 100%;
-    height: 80px;
+    height: 100px;
     padding: 12px;
     background-color: #20639B;
     position: relative;
 }
 
-.header .header-top .logo-header {
+.header .header-name {
     position: absolute;
-    width: 60px;
+    left: 50%;
+    width: 200px;
+    margin-left: -100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    top:0;
+}
+
+.header .header-name span {
+    display: block;
+    color: white;
+    font-size: 1.45em;
+}
+
+.header .header-top .logo-header {
+    width: 80px;
     left: 100px;
 }
 
@@ -100,7 +117,7 @@
 
 .header .header-top .social {
     position: absolute;
-    right: 100px;
+    right: 40px;
     display: flex;
     justify-content: center;
     align-items: center;

@@ -158,6 +158,7 @@
         <div class="ui inverted vertical center aligned segment"
              style="background-image: url('{{url('/images/street-2248101_1920.jpg')}}'); background-size: cover; background-position: center;">
             <div class="ui active text container">
+                <h1>Titulo</h1>
                 <p>
                     Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec
                     id elit non mi porta gravida at eget metus. Nullam id dolor id nibh
@@ -169,6 +170,7 @@
         <div class="ui inverted vertical center aligned segment"
              style="background-image: url('{{url('/images/person-1245789_1920.jpg')}}'); background-size: cover; background-position: center;">
             <div class="ui active text container">
+                <h1>Titulo</h1>
                 <p>
                     Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec
                     id elit non mi porta gravida at eget metus. Nullam id dolor id nibh
@@ -180,6 +182,7 @@
         <div class="ui inverted vertical center aligned segment"
              style="background-image: url('{{url('/images/animal-welfare-1119436_1920.jpg')}}'); background-size: cover; background-position: center;">
             <div class="ui active text container">
+                <h1>Titulo</h1>
                 <p>
                     Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec
                     id elit non mi porta gravida at eget metus. Nullam id dolor id nibh
@@ -194,21 +197,21 @@
             <div class="ui three column stackable center aligned grid container">
                 <div class="column">
                     <div><i class="color-2 fas fa-user-tie fa-5x"></i></div>
-                    <h2 class="ui header">Se Voluntario</h2>
+                    <h2 class="ui header">VOLUNTARIOS</h2>
                     <p>
                         Donec sed odio dui. Etiam porta sem malesuada magna mollis
                         euismod. Nullam id dolor id nibh ultricies vehicula ut id elit.
                     </p>
-                    <a href="{{route('home.organization')}}" class="ui basic button">Ver Organizacionez &raquo;</a>
+                    <a href="{{route('home.organization')}}" class="ui basic button">ORGANIZACIONES &raquo;</a>
                 </div>
                 <div class="column">
                     <div><i class="color-2 fas fa-hands-helping fa-5x"></i></div>
-                    <h1 class="ui header">Ayuda</h1>
+                    <h1 class="ui header">PARTICIPA</h1>
                     <p>
                         Donec sed odio dui. Etiam porta sem malesuada magna mollis
                         euismod. Nullam id dolor id nibh ultricies vehicula ut id elit.
                     </p>
-                    <a href="{{route('home.organization')}}" class="ui basic button">Ver Organizacionez &raquo;</a>
+                    <a href="{{route('home.event')}}" class="ui basic button">EVENTOS &raquo;</a>
                 </div>
                 <div class="column">
                     <div><i class="color-2 fas fa-hand-holding-usd fa-5x"></i></div>
@@ -217,7 +220,7 @@
                         Donec sed odio dui. Etiam porta sem malesuada magna mollis
                         euismod. Nullam id dolor id nibh ultricies vehicula ut id elit.
                     </p>
-                    <a href="{{route('home.organization')}}" class="ui basic button">Ver Organizacionez &raquo;</a>
+                    <a href="{{route('home.donation')}}" class="ui basic button">DONACIONES &raquo;</a>
                 </div>
             </div>
         </div>
