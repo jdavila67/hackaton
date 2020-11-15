@@ -6,19 +6,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f98a822f-ded9-45a1-9189-470d5e0f9f03" name="Default Changelist" comment="Agregando Info en la vista Home">
-      <change afterPath="$PROJECT_DIR$/config/paypal.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/paypal/cancel.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/paypal/success.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/hackaton.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/hackaton.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/DonationController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Donation.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/factories/DonationFactory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_11_15_141651_create_donations_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeders/DonationSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/046-checkmark.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/donation.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/donation.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/paypal/success.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/paypal/success.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -303,10 +301,10 @@
       <screen x="-1920" y="0" width="1920" height="1080" />
     </state>
     <state width="600" height="428" key="javadoc.popup/-1920.0.1920.1080/-3600.0.1680.1050/0.0.1920.1080@-1920.0.1920.1080" timestamp="1605367435330" />
-    <state x="-1295" y="241" width="670" height="676" key="search.everywhere.popup" timestamp="1605449671404">
+    <state x="-1295" y="241" width="670" height="676" key="search.everywhere.popup" timestamp="1605451859409">
       <screen x="-1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="-1295" y="241" width="670" height="676" key="search.everywhere.popup/-1920.0.1920.1080/-3600.0.1680.1050/0.0.1920.1080@-1920.0.1920.1080" timestamp="1605449671404" />
+    <state x="-1295" y="241" width="670" height="676" key="search.everywhere.popup/-1920.0.1920.1080/-3600.0.1680.1050/0.0.1920.1080@-1920.0.1920.1080" timestamp="1605451859409" />
     <state x="625" y="232" width="672" height="651" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1605406943257" />
   </component>
 </project>

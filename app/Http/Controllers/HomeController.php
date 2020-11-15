@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Donation;
 use App\Models\Event;
 use App\Models\Organization;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Srmklive\PayPal\Services\ExpressCheckout;
@@ -106,8 +108,18 @@ class HomeController extends Controller
         return redirect($res['paypal_link']);
     }
 
-    public function paypal_success()
+    public function paypal_success(Request $request)
     {
+        $paypalModule = new ExpressCheckout;
+        $response = $paypalModule->getExpressCheckoutDetails($request->token);
+
+        if (in_array(strtoupper($response['ACK']), ['SUCCESS', 'SUCCESSWITHWARNING'])) {
+            $donation = new Donation;
+            $donation->token = $request->token;
+            $donation->amount =  $response["AMT"];
+            $donation->save();
+        }
+
         return view('paypal.success');
     }
 
