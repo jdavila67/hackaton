@@ -21,9 +21,9 @@ class HomeController extends Controller
     }
 
     public function organization() {
-        $organizations = Organization::all();
-        if(!$organizations) return redirect(route('home'));
-        return  view('organization', ['organizations' => $organizations]);
+        /*$organizations = Organization::all();
+        if(!$organizations) return redirect(route('home'));*/
+        return  view('organization');
     }
 
     public function  profile($id) {

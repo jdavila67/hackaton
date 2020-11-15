@@ -30,6 +30,13 @@
                                             href="mail:{{$data->email}}">{{$data->email}}</a></p>
                                 </div>
                             </div>
+                            <div class="doubling one column row">
+                                <div class="column">
+                                   @foreach ($data->organizationTags as $tag)
+                                    <span class="a-tag">{{$tag->tag}}</span>
+                                   @endforeach
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
