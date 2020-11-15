@@ -1,7 +1,6 @@
 @extends('layouts.default')
 @section('content')
-{{--@include('shared.inpact')--}}
-{{--@include('shared.event', ['event' => $events])--}}
+
 <style type="text/css">
     body {
         -webkit-font-smoothing: antialiased;
@@ -301,6 +300,9 @@
             </div>
         </div>
     </div>
+</div>
+    @include('shared.inpact')
+    @include('shared.event', ['event' => $events])
   @section("scripts")
         <script> $(".slide").slick({
                 autoplay: true,
