@@ -14,4 +14,8 @@ class Event extends Model
     {
         return $this->belongsTo(Organization::class);
     }
+
+    public function organizations() {
+        return $this->hasOne(\App\Models\Organization::class, 'id', 'org_id');
+    }
 }

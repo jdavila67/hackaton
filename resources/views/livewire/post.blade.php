@@ -7,7 +7,7 @@
             </div>
             <div class="content">
                 <div class="summary">
-                    <a >{{$post->organizations->name}}</a> a publicado en su pagina
+                    <a href="{{route('home.organization.profile', ['id' => $post->organizations->id])}}">{{$post->organizations->name}}</a> a publicado en su pagina
                     <div class="date">
                       hace  {{$post->days}} días.
                     </div>

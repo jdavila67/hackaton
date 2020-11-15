@@ -4,7 +4,7 @@
             <div class="stackable one column row">
                 <div class="column">
                     <div class="ui fluid icon input big">
-                        <input type="text" placeholder="Search a very wide input..." list="tags" wire:model.debounce.750ms="search">
+                        <input type="text" placeholder="Busqueda por nombre o etiqueta..." list="tags" wire:model.debounce.750ms="search">
                         <i class="search icon"></i>
                     </div>
                     <span id="advance_search" class="advance_search">Busqueda Avanzada</span>

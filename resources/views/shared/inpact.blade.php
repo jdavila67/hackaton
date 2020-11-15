@@ -1,6 +1,6 @@
 <section class="inpact">
     <div class="ui container a-text-center">
-        <h1 class="section-title">Nuestro Inpacto en la Sociedad</h1>
+        <h1 class="color-2 section-title">Nuestro Inpacto en la Sociedad</h1>
         <p class="section-sub-title">Nuestros esfuerzos han llevado a resultados notables:</p>
        <div class="inpact-content">
            <div class="ui grid">

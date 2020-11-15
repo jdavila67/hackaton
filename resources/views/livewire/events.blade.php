@@ -29,9 +29,9 @@
                             <img src="https://via.placeholder.com/240x160">
                         </div>
                         <div class="content">
-                            <a href="">{{$item->event_title}}</a>
+                            <a href="{{route('home.event.profile', ['id' => $item->id])}}">{{$item->event_title}}</a>
                             <div class="meta">
-                                <span  class="date"></span>
+                                <span class="date">{{$item->organizations->name}}</span>
                             </div>
                             <div class="description">
                                 {{\Illuminate\Support\Str::substr($item->event_desc, 0, 50) . "..."}}

@@ -163,7 +163,7 @@
                     id elit non mi porta gravida at eget metus. Nullam id dolor id nibh
                     ultricies vehicula ut id elit.
                 </p>
-                <div class="ui huge primary button">Sign up today</div>
+                <a href="{{route('home.event')}}" class="ui huge primary button">Eventos</a>
             </div>
         </div>
         <div class="ui inverted vertical center aligned segment"
@@ -174,7 +174,7 @@
                     id elit non mi porta gravida at eget metus. Nullam id dolor id nibh
                     ultricies vehicula ut id elit.
                 </p>
-                <div class="ui huge primary button">Learn more</div>
+                <a href="{{route('home.organization')}}" class="ui huge primary button">Organizaciones</a>
             </div>
         </div>
         <div class="ui inverted vertical center aligned segment"
@@ -185,7 +185,7 @@
                     id elit non mi porta gravida at eget metus. Nullam id dolor id nibh
                     ultricies vehicula ut id elit.
                 </p>
-                <div class="ui huge primary button">Browse gallery</div>
+                <a href="{{route('home.event')}}" class="ui huge primary button">Eventos</a>
             </div>
         </div>
     </div>
@@ -193,7 +193,7 @@
         <div class="ui vertical segment">
             <div class="ui three column stackable center aligned grid container">
                 <div class="column">
-                    <div><i class="fas fa-user-tie fa-5x"></i></div>
+                    <div><i class="color-2 fas fa-user-tie fa-5x"></i></div>
                     <h2 class="ui header">Se Voluntario</h2>
                     <p>
                         Donec sed odio dui. Etiam porta sem malesuada magna mollis
@@ -202,7 +202,7 @@
                     <a href="{{route('home.organization')}}" class="ui basic button">Ver Organizacionez &raquo;</a>
                 </div>
                 <div class="column">
-                    <div><i class="fas fa-hands-helping fa-5x"></i></div>
+                    <div><i class="color-2 fas fa-hands-helping fa-5x"></i></div>
                     <h1 class="ui header">Ayuda</h1>
                     <p>
                         Donec sed odio dui. Etiam porta sem malesuada magna mollis
@@ -211,7 +211,7 @@
                     <a href="{{route('home.organization')}}" class="ui basic button">Ver Organizacionez &raquo;</a>
                 </div>
                 <div class="column">
-                    <div><i class="fas fa-hand-holding-usd fa-5x"></i></div>
+                    <div><i class="color-2 fas fa-hand-holding-usd fa-5x"></i></div>
                     <h1 class="ui header">DONACIONES</h1>
                     <p>
                         Donec sed odio dui. Etiam porta sem malesuada magna mollis
@@ -224,9 +224,8 @@
         <div class="ui vertical segment">
             <div class="ui stackable grid">
                 <div class="ten wide column">
-                    <h1 class="ui header">
-                        First featurette heading.
-                        <span class="sub">It'll blow your mind.</span>
+                    <h1 class="ui header color-2">
+                        Ayudanos a realizar un cambio
                     </h1>
                     <p>
                         Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id
@@ -238,7 +237,7 @@
                 <div class="six wide right aligned column">
                     <img
                         class="ui image"
-                        src="/rootstatic/templates/bootstrap/carousel/static/images/wireframe/square-image.png"
+                        src="{{url('images/joel-muniz-A4Ax1ApccfA-unsplash.jpg')}}"
                     />
                 </div>
             </div>
@@ -248,12 +247,12 @@
                 <div class="six wide column">
                     <img
                         class="ui image"
-                        src="/rootstatic/templates/bootstrap/carousel/static/images/wireframe/square-image.png"
+                        src="{{url('images/larm-rmah-AEaTUnvneik-unsplash.jpg')}}"
                     />
                 </div>
                 <div class="ten wide column">
-                    <h1 class="ui header">
-                        Oh yeah, <span class="sub">it's that good.</span>
+                    <h1 class="ui header color-2">
+                        La felicidad de muchas personan pueden depender de nosotros
                     </h1>
                     <p>
                         Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id
@@ -267,8 +266,8 @@
         <div class="ui vertical segment">
             <div class="ui stackable grid">
                 <div class="ten wide column">
-                    <h1 class="ui header">
-                        And lastly, <span class="sub">this one.</span>
+                    <h1 class="ui header color-2">
+                        Por mas poco que sea, puede ayudar a muchas personas
                     </h1>
                     <p>
                         Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id
@@ -280,7 +279,7 @@
                 <div class="six wide right aligned column">
                     <img
                         class="ui image"
-                        src="/rootstatic/templates/bootstrap/carousel/static/images/wireframe/square-image.png"
+                        src="{{url('images/kat-yukawa-K0E6E0a0R3A-unsplash.jpg')}}"
                     />
                 </div>
             </div>

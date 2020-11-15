@@ -1,7 +1,7 @@
 @extends('layouts.default')
 @section('content')
    <div class="section-30">
-       <div class="a-text-center a-p-b-12">
+       <div class="color-2 a-text-center a-p-b-12">
            <h1>ORGANIZACIONES</h1>
        </div>
        <livewire:organization />

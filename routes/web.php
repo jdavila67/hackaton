@@ -14,11 +14,14 @@ use Illuminate\Support\Facades\Route;
 */
 Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/eventos', [\App\Http\Controllers\HomeController::class, 'event'])->name('home.event');
+Route::get('/eventos/{id}', [\App\Http\Controllers\HomeController::class, 'event_org'])->name('home.event.org');
+Route::get('/evento/{id}', [\App\Http\Controllers\HomeController::class, 'event_profile'])->name('home.event.profile');
 Route::get('/organizaciones', [\App\Http\Controllers\HomeController::class, 'organization'])->name('home.organization');
 Route::get('/organizaciones/perfil/{id}', [\App\Http\Controllers\HomeController::class, 'profile'])->name('home.organization.profile');
 Route::get('/donaciones', [\App\Http\Controllers\HomeController::class, 'donation'])->name('home.donation');
 Route::get('/sobre-nosotros', [\App\Http\Controllers\HomeController::class, 'about'])->name('home.about');
 Route::get('/publicaciones', [\App\Http\Controllers\HomeController::class, 'post'])->name('home.post');
+Route::get('/{name}', [\App\Http\Controllers\HomeController::class, 'perfil'])->name('home.organization.perfil');
 
 Route::prefix('portal')->middleware(['auth:sanctum', 'verified']) ->group(function () {
     Route::get('/', function () {

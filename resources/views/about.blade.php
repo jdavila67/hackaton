@@ -2,7 +2,7 @@
 @section('content')
     <div class="ui container">
         <div class="section-30">
-            <h3>Sobre Nosotros</h3>
+            <h1 class="a-text-center color-2">SOBRE NOSOTROS</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id quam commodo, bibendum mi vel,
                 ultrices quam. Quisque ultrices purus odio. Curabitur sodales eleifend congue. Phasellus libero eros,
                 convallis at arcu vitae, aliquam pellentesque nisl. Aliquam vitae ultricies lectus. Curabitur non

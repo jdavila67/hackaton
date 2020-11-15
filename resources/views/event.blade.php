@@ -1,7 +1,9 @@
 @extends('layouts.default')
 @section('content')
-    <div class="a-text-center a-p-b-12">
-        <h2>Eventos</h2>
-    </div>
-    <livewire:events />
+  <div class="section-30">
+      <div class="a-text-center a-p-b-12">
+          <h1 class="color-2">EVENTOS</h1>
+      </div>
+      <livewire:events />
+  </div>
 @endsection

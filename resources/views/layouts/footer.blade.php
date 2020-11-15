@@ -7,25 +7,24 @@
                 class="ui stackable inverted divided equal height stackable grid"
             >
                 <div class="three wide column">
-                    <h4 class="ui inverted header">About</h4>
+                    <h4>Menu</h4>
                     <div class="ui inverted link list">
-                        <a class="item" href="#root">Sitemap</a>
-                        <a class="item" href="#root">Contact Us</a>
-                        <a class="item" href="#root">Religious Ceremonies</a>
-                        <a class="item" href="#root">Gazebo Plans</a>
+                        <a class="item" href="{{route('home')}}">Inicio</a>
+                        <a class="item" href="{{route('home.about')}}">Sobre Nosotros</a>
+                        <a class="item" href="{{route('home.organization')}}">Organizaciones</a>
+                        <a class="item" href="{{route('home.post')}}">Publicaciones</a>
                     </div>
                 </div>
                 <div class="three wide column">
-                    <h4 class="ui inverted header">Services</h4>
+                    <h4>Servicios</h4>
                     <div class="ui inverted link list">
-                        <a class="item" href="#root">Banana Pre-Order</a>
-                        <a class="item" href="#root">DNA FAQ</a>
-                        <a class="item" href="#root">How To Access</a>
-                        <a class="item" href="#root">Favorite X-Men</a>
+                        <a class="item" href="{{route('home.organization')}}">Organizaciones</a>
+                        <a class="item" href="{{route('home.post')}}">Eventos</a>
+                        <a class="item" href="{{route('home.post')}}">Donaciones</a>
                     </div>
                 </div>
                 <div class="seven wide column">
-                    <h4 class="ui inverted header">Footer Header</h4>
+                    <h4>Footer Header</h4>
                     <p>
                         Extra space for a call to action inside the footer that could
                         help re-engage users.

@@ -33,6 +33,16 @@
                                 </div>
                                 <div class="doubling one column row">
                                     <div class="column">
+                                        <a href="{{route('home.event.org', ['id' => $data->id])}}" class="ui primary button">
+                                            Eventos
+                                        </a>
+                                        <button class="ui teal button">
+                                            Ser Voluntario
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="doubling one column row">
+                                    <div class="column">
                                         @foreach ($data->organizationTags as $tag)
                                             <span class="a-tag">{{$tag->tag}}</span>
                                         @endforeach
