@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand />
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="f98a822f-ded9-45a1-9189-470d5e0f9f03" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/Events.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/livewire/events.blade.php" afterDir="false" />
+    <list default="true" id="f98a822f-ded9-45a1-9189-470d5e0f9f03" name="Default Changelist" comment="Agregando Comments al menu de publicaciones">
+      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/Post.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/livewire/post.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/about.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/about.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/event.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/event.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/organization.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/organization.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Post.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/post.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/post.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,7 +174,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
@@ -193,13 +196,35 @@
       <workItem from="1605315105048" duration="15741000" />
       <workItem from="1605356232662" duration="9888000" />
     </task>
+    <task id="LOCAL-00001" summary="Agregando Comments al menu de publicaciones">
+      <created>1605405457574</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1605405457574</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Agregando Comments al menu de publicaciones" />
+    <option name="LAST_COMMIT_MESSAGE" value="Agregando Comments al menu de publicaciones" />
   </component>
   <component name="WindowStateProjectService">
     <state x="-1230" y="286" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1605382624120">
@@ -231,17 +256,27 @@
       <screen x="-1920" y="0" width="1920" height="1080" />
     </state>
     <state x="-1137" y="470" key="NewPhpFileDialog/-1920.0.1920.1080/-3600.0.1680.1050/0.0.1920.1080@-1920.0.1920.1080" timestamp="1605372185691" />
-    <state x="-1452" y="179" key="SettingsEditor" timestamp="1605315073406">
-      <screen x="-1920" y="0" width="1920" height="1080" />
+    <state x="468" y="172" key="SettingsEditor" timestamp="1605408169433">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="-1452" y="179" key="SettingsEditor/-1920.0.1920.1080/-3600.23.1680.1027/0.23.1920.1057@-1920.0.1920.1080" timestamp="1605315073406" />
+    <state x="468" y="172" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1605408169433" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1605405725558">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1605405725558" />
+    <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605405734752">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1605405734752" />
     <state width="600" height="428" key="javadoc.popup" timestamp="1605367435330">
       <screen x="-1920" y="0" width="1920" height="1080" />
     </state>
     <state width="600" height="428" key="javadoc.popup/-1920.0.1920.1080/-3600.0.1680.1050/0.0.1920.1080@-1920.0.1920.1080" timestamp="1605367435330" />
-    <state x="-1295" y="241" width="670" height="676" key="search.everywhere.popup" timestamp="1605399566500">
-      <screen x="-1920" y="0" width="1920" height="1080" />
+    <state x="625" y="232" width="672" height="651" key="search.everywhere.popup" timestamp="1605406943257">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="-1295" y="241" width="670" height="676" key="search.everywhere.popup/-1920.0.1920.1080/-3600.0.1680.1050/0.0.1920.1080@-1920.0.1920.1080" timestamp="1605399566500" />
+    <state x="625" y="232" width="672" height="651" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1605406943257" />
   </component>
 </project>
