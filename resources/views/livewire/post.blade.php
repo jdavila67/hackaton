@@ -16,15 +16,15 @@
                     {{$post->description}}
                 </div>
                 <div class="meta a-w-100">
-                    <a class="like">
+                    <a class="like"onclick="hide('{{$post->id}}')">
                         <i class="comment outline icon"></i> {{count($post->comments)}} Comentarios
                     </a>
 
-                    <div class="ui comments">
+                    <div class="ui comments" id="{{$post->id}}" style="display: none;">
 
                         <h3 class="ui dividing header">Comments</h3>
                         @foreach($post->comments as $comment)
-                        <div class="comment">
+                        <div   class="comment" >
                             <a class="avatar">
                                 <img src="https://via.placeholder.com/140x140">
                             </a>
@@ -53,3 +53,15 @@
         @endforeach
     </div>
 </div>
+@section('scripts')
+    <script>
+        function hide(id) {
+            var x = document.getElementById(id);
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+    </script>
+@endsection

@@ -5,10 +5,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f98a822f-ded9-45a1-9189-470d5e0f9f03" name="Default Changelist" comment="Agregando Info en la vista Home">
+    <list default="true" id="f98a822f-ded9-45a1-9189-470d5e0f9f03" name="Default Changelist" comment="Agregando Info en la vista Home 2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/footer.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/post.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/post.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -215,7 +214,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605411945460</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Agregando Info en la vista Home 2">
+      <created>1605412713385</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1605412713385</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -238,7 +244,8 @@
     <MESSAGE value="Agregando Comments al menu de publicaciones" />
     <MESSAGE value="Agregando Comments al menu de publicaciones -&gt; publicaciones" />
     <MESSAGE value="Agregando Info en la vista Home" />
-    <option name="LAST_COMMIT_MESSAGE" value="Agregando Info en la vista Home" />
+    <MESSAGE value="Agregando Info en la vista Home 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Agregando Info en la vista Home 2" />
   </component>
   <component name="WindowStateProjectService">
     <state x="-1230" y="286" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1605382624120">
@@ -275,10 +282,10 @@
     </state>
     <state x="-1452" y="179" key="SettingsEditor/-1920.0.1920.1080/-3600.23.1680.1027/0.23.1920.1057@-1920.0.1920.1080" timestamp="1605315073406" />
     <state x="468" y="172" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1605408169433" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1605411947577">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1605412721422">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1605411947577" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1605412721422" />
     <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605405734752">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -287,10 +294,10 @@
       <screen x="-1920" y="0" width="1920" height="1080" />
     </state>
     <state width="600" height="428" key="javadoc.popup/-1920.0.1920.1080/-3600.0.1680.1050/0.0.1920.1080@-1920.0.1920.1080" timestamp="1605367435330" />
-    <state x="625" y="232" width="672" height="651" key="search.everywhere.popup" timestamp="1605406943257">
+    <state x="625" y="232" width="672" height="651" key="search.everywhere.popup" timestamp="1605413476200">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="-1295" y="241" width="670" height="676" key="search.everywhere.popup/-1920.0.1920.1080/-3600.0.1680.1050/0.0.1920.1080@-1920.0.1920.1080" timestamp="1605399566500" />
-    <state x="625" y="232" width="672" height="651" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1605406943257" />
+    <state x="625" y="232" width="672" height="651" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1605413476200" />
   </component>
 </project>
