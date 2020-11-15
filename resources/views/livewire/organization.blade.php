@@ -17,12 +17,6 @@
             </div>
         </div>
     </div>
-    <br/>
-    <div class="loading" wire:loading>
-        <div class="ui active inverted dimmer">
-            <div class="ui text loader">Loading</div>
-        </div>
-    </div>
     <div class="ui grid">
         <div class="stackable five column row">
             @foreach ($organizations as $organization)
