@@ -1,6 +1,5 @@
 <style>.footer.segment {
         padding: 5em 0em;
-        background-color: #1a202c !important;
     }</style>
     <div class="ui inverted vertical footer segment">
         <div class="ui container">
