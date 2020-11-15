@@ -254,6 +254,27 @@ main .content {
     padding: 60px;
 }
 
+/* Donation */
+.donation {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    margin: 0 12px;
+    align-items: center;
+    justify-content: center;
+    background-color: #20639B;
+    transition: all ease .3s;
+    cursor: pointer;
+}
+.donation:hover {
+    background-color: #173F5F;
+}
+
+.donation span {
+    font-size: 1.45em;
+    color:white;
+}
+
 /* Footer */
 .footer {
     width: 100%;
