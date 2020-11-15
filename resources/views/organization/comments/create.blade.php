@@ -1,5 +1,5 @@
 <x-app-layout>
-    @section('header', 'Modificar Publicación')
+    @section('header', 'Crear Publicación')
     <div class="ui container a-p-12">
         <form class="ui form">
             <h3 class="ui dividing header">Información de la Publicación</h3>
@@ -7,12 +7,12 @@
 
             <div class="field full">
                 <label for="event_title">Título</label>
-                <input type="text" placeholder="Título" name="title" required value="{{old('title', $post->title)}}">
+                <input type="text" placeholder="Título" name="title" required value="{{old('title')}}">
             </div>
             <div class="three fields">
                 <div class="field">
                     <label>Descripción</label>
-                    <textarea  type="text-area"  name="description" placeholder="Descripción" required value="{{old('description' )}}">{{$post->description}}</textarea>
+                    <input type="tel" name="description" placeholder="Descripción" required value="{{old('description')}}">
                 </div>
             </div>
             {{--Basic Info--}}

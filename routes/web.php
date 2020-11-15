@@ -54,12 +54,22 @@ Route::prefix('portal')->middleware(['auth:sanctum', 'verified']) ->group(functi
             Route::delete('/eliminar/{org}/{id}',[\App\Http\Controllers\VolunteerController::class, 'delete'])->name('volunteer.delete');
         });
         /* Posts */
-        Route::prefix('pots')->group(function(){
+        Route::prefix('posts')->group(function(){
             Route::get('/{id}',[\App\Http\Controllers\PostController::class, 'index'])->name('post.index');
             Route::get('/anadir/{id}',[\App\Http\Controllers\PostController::class, 'create'])->name('post.create');
             Route::get('/actualizar/{org}/{id}',[\App\Http\Controllers\PostController::class, 'edit'])->name('post.edit');
             Route::delete('/eliminar/{org}/{id}',[\App\Http\Controllers\PostController::class, 'delete'])->name('post.delete');
+
         });
+
+        /* Comments */
+        Route::prefix('comentarios')->group(function(){
+            Route::get('/{id}',[\App\Http\Controllers\PostCommentsController::class, 'index'])->name('comments.index');
+            Route::get('/anadir/{id}',[\App\Http\Controllers\PostCommentsController::class, 'create'])->name('comments.create');
+            Route::get('/actualizar/{org}/{id}',[\App\Http\Controllers\PostCommentsController::class, 'edit'])->name('comments.edit');
+            Route::delete('/eliminar/{org}/{id}',[\App\Http\Controllers\PostCommentsController::class, 'delete'])->name('comments.delete');
+        });
+
     });
 
     /* Users */

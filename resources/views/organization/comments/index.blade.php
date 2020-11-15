@@ -1,13 +1,10 @@
 <x-app-layout>
-    @section('header', 'Publicaciones')
+    @section('header', 'Comentarios')
     @section('action')
         <div class="ui grid a-p-t-b-6 a-text-right">
             <div class="column">
-                <a class="ui button primary" href="{{route('organization')}}">
+                <a class="ui button primary" href="{{route('post.index', ['id' => $id])}}">
                     Regresar
-                </a>
-                <a class="ui button primary" href="{{route('post.create', ['id' => $id])}}">
-                    <i class="fas fa-plus"></i> Crear
                 </a>
             </div>
         </div>
@@ -15,27 +12,22 @@
     <table class="ui striped table">
         <thead>
         <tr>
-            <th>Titulo</th>
-            <th>Descripción</th>
+            <th>Comentarios</th>
             <th>Fecha</th>
             <th></th>
         </tr>
         </thead>
         <tbody>
-        @foreach ($posts as $post)
+        @foreach ($comments as $commentario)
             <tr>
-                <td data-label="Título">{{$post->title}}
-                </td>
-                <td data-label="Descripción">{{$post->description}}</td>
-                <td data-label="Fecha">{{$post->created_at}}</td>
+                <td data-label="Comentarios">{{$commentario->comment}} </td>
+                <td data-label="Fecha">{{$commentario->created_at}}</td>
                 <td>
                     <div class="ui dropdown">
                         <div class="text">Acción</div>
                         <i class="dropdown icon"></i>
                         <div class="menu">
-                            <div class="item"><a href="{{route('post.edit', ['id' => $post->id, 'org' => $id])}}">Modificar</a></div>
-                            <div class="item"><a href="{{route('comments.index', ['id' => $post->id])}}">Comentarios</a></div>
-                            <div class="item"><a href="#" onclick="_delete('{{$post->id}}')">Eliminar</a></div>
+                            <div class="item"><a href="#" onclick="_delete('{{$commentario->id}}')">Eliminar</a></div>
                         </div>
                     </div>
                 </td>
@@ -46,10 +38,10 @@
     <div class="ui mini modal">
         <div class="ui icon header">
             <i class="Trash icon"></i>
-            Eliminar Voluntario
+            Eliminar Comentario
         </div>
         <div class="content">
-            <p>¿Estás seguro de que quieres eleminar esta Publicación?</p>
+            <p>¿Estás seguro de que quieres eleminar este comentario?</p>
         </div>
         <div class="actions">
             <div class="ui red cancel button">

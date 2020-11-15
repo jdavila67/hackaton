@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand />
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="f98a822f-ded9-45a1-9189-470d5e0f9f03" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/Events.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/livewire/events.blade.php" afterDir="false" />
+    <list default="true" id="f98a822f-ded9-45a1-9189-470d5e0f9f03" name="Default Changelist" comment="Agregando Menu admin de voluntarios y publicaciones">
+      <change afterPath="$PROJECT_DIR$/resources/views/organization/comments/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/organization/comments/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/organization/comments/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/about.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/about.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/event.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/event.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/organization.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/organization.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PostCommentsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PostCommentsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/organization/posts/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/organization/posts/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/organization/posts/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/organization/posts/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -163,7 +170,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/organization/comments" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -173,6 +180,11 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Jonathan\PhpstormProjects\hackaton\resources\views\organization\comments" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -198,19 +210,22 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="-1230" y="286" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1605382624120">
+    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1605404069190">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1230" y="286" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/-1920.0.1920.1080/-3600.0.1680.1050/0.0.1920.1080@-1920.0.1920.1080" timestamp="1605331771665" />
+    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605404069190" />
+    <state x="-1353" y="115" key="CommitChangelistDialog2" timestamp="1605317906078">
       <screen x="-1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="-1230" y="286" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/-1920.0.1920.1080/-3600.0.1680.1050/0.0.1920.1080@-1920.0.1920.1080" timestamp="1605382624120" />
-    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605309462625" />
-    <state x="-1353" y="115" key="CommitChangelistDialog2" timestamp="1605395343747">
-      <screen x="-1920" y="0" width="1920" height="1080" />
-    </state>
-    <state x="-1353" y="115" key="CommitChangelistDialog2/-1920.0.1920.1080/-3600.0.1680.1050/0.0.1920.1080@-1920.0.1920.1080" timestamp="1605395343747" />
+    <state x="-1353" y="115" key="CommitChangelistDialog2/-1920.0.1920.1080/-3600.0.1680.1050/0.0.1920.1080@-1920.0.1920.1080" timestamp="1605317906078" />
     <state width="1878" height="305" key="GridCell.Tab.0.bottom" timestamp="1605315094038">
       <screen x="-1920" y="0" width="1920" height="1080" />
     </state>
@@ -239,9 +254,9 @@
       <screen x="-1920" y="0" width="1920" height="1080" />
     </state>
     <state width="600" height="428" key="javadoc.popup/-1920.0.1920.1080/-3600.0.1680.1050/0.0.1920.1080@-1920.0.1920.1080" timestamp="1605367435330" />
-    <state x="-1295" y="241" width="670" height="676" key="search.everywhere.popup" timestamp="1605399566500">
+    <state x="-1295" y="241" width="670" height="676" key="search.everywhere.popup" timestamp="1605368950749">
       <screen x="-1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="-1295" y="241" width="670" height="676" key="search.everywhere.popup/-1920.0.1920.1080/-3600.0.1680.1050/0.0.1920.1080@-1920.0.1920.1080" timestamp="1605399566500" />
+    <state x="-1295" y="241" width="670" height="676" key="search.everywhere.popup/-1920.0.1920.1080/-3600.0.1680.1050/0.0.1920.1080@-1920.0.1920.1080" timestamp="1605368950749" />
   </component>
 </project>

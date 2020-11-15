@@ -11,8 +11,8 @@ class PostController extends Controller
     * param id : organization id
     */
     public function index($id) {
-        $events = Post::where('org_id', '=', $id)->get();
-        return view('organization.posts.index',['posts' => $events, 'id' => $id]);
+        $posts = Post::where('org_id', '=', $id)->get();
+        return view('organization.posts.index',['posts' => $posts, 'id' => $id]);
     }
 
     /*
