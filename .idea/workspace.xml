@@ -5,12 +5,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f98a822f-ded9-45a1-9189-470d5e0f9f03" name="Default Changelist" comment="Agregando Comments al menu de publicaciones">
-      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/Post.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/livewire/post.blade.php" afterDir="false" />
+    <list default="true" id="f98a822f-ded9-45a1-9189-470d5e0f9f03" name="Default Changelist" comment="Agregando Comments al menu de publicaciones -&gt; publicaciones">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Post.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/post.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/post.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/default.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/default.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/post.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/post.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -203,7 +202,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605405457574</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Agregando Comments al menu de publicaciones -&gt; publicaciones">
+      <created>1605410321239</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1605410321239</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -224,7 +230,8 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Agregando Comments al menu de publicaciones" />
-    <option name="LAST_COMMIT_MESSAGE" value="Agregando Comments al menu de publicaciones" />
+    <MESSAGE value="Agregando Comments al menu de publicaciones -&gt; publicaciones" />
+    <option name="LAST_COMMIT_MESSAGE" value="Agregando Comments al menu de publicaciones -&gt; publicaciones" />
   </component>
   <component name="WindowStateProjectService">
     <state x="-1230" y="286" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1605382624120">
@@ -261,10 +268,10 @@
     </state>
     <state x="-1452" y="179" key="SettingsEditor/-1920.0.1920.1080/-3600.23.1680.1027/0.23.1920.1057@-1920.0.1920.1080" timestamp="1605315073406" />
     <state x="468" y="172" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1605408169433" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1605405725558">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1605410322581">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1605405725558" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1605410322581" />
     <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605405734752">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

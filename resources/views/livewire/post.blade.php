@@ -15,10 +15,38 @@
                 <div class="extra text">
                     {{$post->description}}
                 </div>
-                <div class="meta">
+                <div class="meta a-w-100">
                     <a class="like">
                         <i class="comment outline icon"></i> {{count($post->comments)}} Comentarios
                     </a>
+
+                    <div class="ui comments">
+
+                        <h3 class="ui dividing header">Comments</h3>
+                        @foreach($post->comments as $comment)
+                        <div class="comment">
+                            <a class="avatar">
+                                <img src="https://via.placeholder.com/140x140">
+                            </a>
+                            <div class="content">
+                                <div class="metadata">
+                                    <span class="date">el {{$comment->created_at}}</span>
+                                </div>
+                                <div class="text">
+                                    {{$comment->comment}}
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
+                        <form class="ui reply form">
+                            <div class="field">
+                                <textarea></textarea>
+                            </div>
+                            <div class="ui blue labeled submit icon button">
+                                <i class="icon edit"></i> Add Reply
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
