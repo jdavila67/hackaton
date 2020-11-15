@@ -14,16 +14,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::prefix('portal')->middleware(['auth:sanctum', 'verified']) ->group(function () {
-    Route::get('/', function () {
-        return view('dashboard');
-    })->name('dashboard');
 
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    Route::get('/', [\App\Http\Controllers\AdminController::class, 'dashboard'])->name('dashboard');
+    Route::get('/dashboard', [\App\Http\Controllers\AdminController::class, 'dashboard'])->name('admin.dashboard');
+    Route::get('/donaciones', [\App\Http\Controllers\AdminController::class, 'donation'])->name('admin.donation');
 
     /* Organization Router */
     Route::prefix('organizacion')->group(function () {
+
         Route::get('/', [\App\Http\Controllers\OrganizationController::class, 'index'])->name('organization');
         Route::get('/anadir', [\App\Http\Controllers\OrganizationController::class, 'create'])->name('organization.create');
         Route::get('/actualizar/{id}', [\App\Http\Controllers\OrganizationController::class, 'edit'])->name('organization.edit');
@@ -87,5 +85,6 @@ Route::get('/publicaciones', [\App\Http\Controllers\HomeController::class, 'post
 Route::get('/paypal/success', [\App\Http\Controllers\HomeController::class, 'paypal_success'])->name('home.paypal.success');
 Route::get('/paypal/cancel', [\App\Http\Controllers\HomeController::class, 'paypal_cancel'])->name('home.paypal.cancel');
 Route::get('/paypal/{amount}', [\App\Http\Controllers\HomeController::class, 'paypal'])->name('home.donation.paypal');
+Route::get('/confirmacion-pago', [\App\Http\Controllers\HomeController::class, 'confirmation_payment'])->name('home.confirmation.payment');
 Route::get('/{name}', [\App\Http\Controllers\HomeController::class, 'perfil'])->name('home.organization.perfil');
 

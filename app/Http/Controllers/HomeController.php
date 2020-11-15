@@ -120,6 +120,10 @@ class HomeController extends Controller
             $donation->save();
         }
 
+        return redirect(route('home.confirmation.payment'));
+    }
+
+    public function confirmation_payment() {
         return view('paypal.success');
     }
 
