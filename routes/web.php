@@ -46,6 +46,20 @@ Route::prefix('portal')->middleware(['auth:sanctum', 'verified']) ->group(functi
             Route::get('/anadir/{id}',[\App\Http\Controllers\EventController::class, 'create'])->name('event.create');
             Route::get('/actualizar/{org}/{id}',[\App\Http\Controllers\EventController::class, 'edit'])->name('event.edit');
         });
+        /* Volunteers */
+        Route::prefix('voluntarios')->group(function(){
+            Route::get('/{id}',[\App\Http\Controllers\VolunteerController::class, 'index'])->name('volunteer.index');
+            Route::get('/anadir/{id}',[\App\Http\Controllers\VolunteerController::class, 'create'])->name('volunteer.create');
+            Route::get('/actualizar/{org}/{id}',[\App\Http\Controllers\VolunteerController::class, 'edit'])->name('volunteer.edit');
+            Route::delete('/eliminar/{org}/{id}',[\App\Http\Controllers\VolunteerController::class, 'delete'])->name('volunteer.delete');
+        });
+        /* Posts */
+        Route::prefix('pots')->group(function(){
+            Route::get('/{id}',[\App\Http\Controllers\PostController::class, 'index'])->name('post.index');
+            Route::get('/anadir/{id}',[\App\Http\Controllers\PostController::class, 'create'])->name('post.create');
+            Route::get('/actualizar/{org}/{id}',[\App\Http\Controllers\PostController::class, 'edit'])->name('post.edit');
+            Route::delete('/eliminar/{org}/{id}',[\App\Http\Controllers\PostController::class, 'delete'])->name('post.delete');
+        });
     });
 
     /* Users */
@@ -54,4 +68,5 @@ Route::prefix('portal')->middleware(['auth:sanctum', 'verified']) ->group(functi
         Route::get('/anadir', [\App\Http\Controllers\UserController::class, 'create'])->name('user.create');
         Route::get('/actualizar/{id}', [\App\Http\Controllers\UserController::class, 'edit'])->name('user.edit');
     });
+
 });

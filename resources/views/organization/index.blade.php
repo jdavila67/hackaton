@@ -42,6 +42,8 @@
                             <div class="item"><a href="{{route('organization.edit', ['id' => $organization->id])}}">Modificar</a></div>
                             <div class="item"><a href="{{route('member.index', ['id' => $organization->id])}}">Miembros</a></div>
                             <div class="item"><a href="{{route('event.index', ['id' => $organization->id])}}">Eventos</a></div>
+                            <div class="item"><a href="{{route('volunteer.index', ['id' => $organization->id])}}">Voluntarios</a></div>
+                            <div class="item"><a href="{{route('post.index', ['id' => $organization->id])}}">Publicaciones</a></div>
                         </div>
                     </div>
                 </td>
