@@ -4,12 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Models\Organization;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
     //
     public function index() {
-        return  view('welcome');
+        $events = DB::table('events')->orderBy('event_date')->take(6)->get();
+        return  view('welcome', ['events' => $events]);
     }
 
     public function about() {
@@ -34,5 +36,9 @@ class HomeController extends Controller
 
     public function event() {
         return  view('event');
+    }
+
+    public function post() {
+        return view('post');
     }
 }

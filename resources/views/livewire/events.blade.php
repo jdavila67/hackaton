@@ -37,8 +37,8 @@
                                 {{\Illuminate\Support\Str::substr($item->event_desc, 0, 50) . "..."}}
                             </div>
                         </div>
-                        <div class="extra content">
-                           Fecha {{date('m/d/Y', strtotime($item->event_date))}}
+                        <div class="content">
+                           {{date('m/d/Y', strtotime($item->event_date))}} {{date(' h:ma', strtotime($item->event_time_from))}} - {{date(' h:ma', strtotime($item->event_time_to))}}
                         </div>
                     </div>
                 </div>

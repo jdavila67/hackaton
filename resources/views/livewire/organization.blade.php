@@ -73,7 +73,9 @@
     @section('scripts')
         <script>
             $('#advance_search').click(function() {
-                $('.ui.modal').modal('show');
+                $('.ui.modal').modal({
+                    closable: false
+                }).modal('show');
                 $('.ui .dropdown').dropdown({
                     allowAdditions: true
                 })
