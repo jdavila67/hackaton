@@ -1,7 +1,9 @@
 <x-app-layout>
     @section('header', 'Modificar Publicación')
     <div class="ui container a-p-12">
-        <form class="ui form">
+        <form class="ui form" action="/portal/organizacion/posts/actualizar" method="POST">
+            @csrf
+            <input type="hidden" name="id" value="{{$post->id}}">
             <h3 class="ui dividing header">Información de la Publicación</h3>
             {{--Basic Info--}}
 
@@ -20,7 +22,7 @@
             <button class="ui primary button" type="submit">
                 Guardar
             </button>
-            <a class="ui button" href="{{route('post.index', ['id' => $id])}}">
+            <a class="ui button" href="{{route('post.index', ['id' => $post->org_id])}}">
                 Regresar
             </a>
             {{-- Action --}}

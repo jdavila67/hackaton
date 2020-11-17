@@ -15,9 +15,7 @@ class PostController extends Controller
         return view('organization.posts.index',['posts' => $posts, 'id' => $id]);
     }
 
-    /*
-     * param $id = organization id
-     */
+
     public function edit($org, $id) {
         $event = Post::where([
             ['org_id','=', $org],
@@ -25,6 +23,18 @@ class PostController extends Controller
         ])->first();
 
         return view('organization.posts.edit', ['id' => $org, 'post' => $event]);
+    }
+
+    /*
+     * param $id = organization id
+     */
+    public function post(Request $request) {
+
+        $post = Post::find($request->id);
+        $post->title=$request->title;
+        $post->description=$request->description;
+        $post->save();
+        return view('organization.posts.edit')->with(['post'=>$post]);
     }
 
     /*

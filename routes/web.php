@@ -50,6 +50,7 @@ Route::prefix('portal')->middleware(['auth:sanctum', 'verified']) ->group(functi
             Route::get('/{id}',[\App\Http\Controllers\PostController::class, 'index'])->name('post.index');
             Route::get('/anadir/{id}',[\App\Http\Controllers\PostController::class, 'create'])->name('post.create');
             Route::get('/actualizar/{org}/{id}',[\App\Http\Controllers\PostController::class, 'edit'])->name('post.edit');
+            Route::post('/actualizar/',[\App\Http\Controllers\PostController::class, 'post'])->name('post.post');
             Route::delete('/eliminar/{org}/{id}',[\App\Http\Controllers\PostController::class, 'delete'])->name('post.delete');
 
         });
